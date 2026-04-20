@@ -1,13 +1,2941 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>blu-ocean-site</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Blu Ocean Innovations — Own the AI Conversation</title>
+
+<meta name="description" content="Blu Ocean Innovations controls what the internet and AI say about your business. AI visibility, citation building, and digital authority for the AI era.">
+
+<!-- Schema.org structured data for AI/E-E-A-T -->
+
+<script type="application/ld+json">
+
+{
+
+  "@context": "https://schema.org",
+
+  "@type": "ProfessionalService",
+
+  "name": "Blu Ocean Innovations LLC",
+
+  "alternateName": "Blu Ocean AI",
+
+  "url": "https://bluoceaninnovations.ai",
+
+  "description": "AI-first digital authority agency. We control what the internet and AI say about your business — AI visibility, citation building, and digital authority across ChatGPT, Gemini, Grok, and all major AI platforms.",
+
+  "slogan": "Own the AI Conversation",
+
+  "priceRange": "$97 - $2,997/month",
+
+  "sameAs": [
+
+    "https://facebook.com/BluOceanRising",
+
+    "https://twitter.com/bluoceanrising",
+
+    "https://linkedin.com/company/bluoceaninnovations",
+
+    "https://pinterest.com/bluoceaninnovations",
+
+    "https://instagram.com/bluoceanrising",
+
+    "https://bluocean.blog/"
+
+  ]
+
+}
+
+</script>
+
+<script type="application/ld+json">
+
+{
+
+  "@context": "https://schema.org",
+
+  "@type": "FAQPage",
+
+  "mainEntity": [
+
+    {"@type":"Question","name":"How quickly will I see results?","acceptedAnswer":{"@type":"Answer","text":"Most clients achieve full AI citation presence across major platforms within 60–90 days of activation. The Sea Turtle tier provides immediate visibility insights, while Shark and Whale tiers include active execution for faster results."}},
+
+    {"@type":"Question","name":"What makes this different from traditional SEO?","acceptedAnswer":{"@type":"Answer","text":"Traditional SEO optimizes for Google's link-based algorithm. Our system optimizes for how AI models like ChatGPT, Gemini, and Grok select and cite sources — entity building, structured authority signals, and citation-optimized content."}},
+
+    {"@type":"Question","name":"Do I need to create content myself?","acceptedAnswer":{"@type":"Answer","text":"Only on the Sea Turtle tier, which provides a self-guided fix plan. Dolphin tier and above are fully done-for-you — we handle all content creation, optimization, and distribution."}},
+
+    {"@type":"Question","name":"What AI platforms do you cover?","acceptedAnswer":{"@type":"Answer","text":"We build visibility across ChatGPT, Google Gemini, Google AI Overviews, Grok, Perplexity, and all major AI-assisted search and discovery platforms — plus emerging ones as they launch."}}
+
+  ]
+
+}
+
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<style>
+
+  :root {
+
+    --bg-0: #020810;
+
+    --bg-1: #050d1a;
+
+    --bg-2: #0a1628;
+
+    --bg-3: #0f1e37;
+
+    --accent: #3498db;
+
+    --accent-bright: #5dade2;
+
+    --accent-deep: #1a6eb5;
+
+    --teal: #1abc9c;
+
+    --gold: #e8b84b;
+
+    --text-bright: #e8f4ff;
+
+    --text: #c8d8e8;
+
+    --text-muted: #7a9ab8;
+
+    --text-dim: #5a7a94;
+
+    --text-faint: #3a5a74;
+
+    --border: rgba(52,152,219,0.08);
+
+    --border-hover: rgba(52,152,219,0.25);
+
+    --font-display: 'Outfit', sans-serif;
+
+    --font-body: 'DM Sans', sans-serif;
+
+    --font-accent: 'Bebas Neue', sans-serif;
+
+  }
+
+  *, ::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+  body {
+
+    font-family: var(--font-body);
+
+    background: var(--bg-1);
+
+    color: var(--text);
+
+    overflow-x: hidden;
+
+    line-height: 1.6;
+
+  }
+
+  /* ====== Skip Link ====== */
+
+  .skip-link {
+
+    position: absolute; top: -100px; left: 0; background: var(--accent);
+
+    color: #fff; padding: 8px 16px; font-weight: 700; z-index: 9999;
+
+    transition: top 0.2s; text-decoration: none;
+
+  }
+
+  .skip-link:focus { top: 0; }
+
+  /* ====== Animations ====== */
+
+  @keyframes wave {
+
+    0% { transform: translateX(-4%) rotate(-1deg); }
+
+    100% { transform: translateX(4%) rotate(1deg); }
+
+  }
+
+  @keyframes float {
+
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0.15; }
+
+    50% { transform: translateY(-20px) scale(1.3); opacity: 0.3; }
+
+  }
+
+  @keyframes shimmer {
+
+    0% { background-position: -200% center; }
+
+    100% { background-position: 200% center; }
+
+  }
+
+  @keyframes pulse {
+
+    0%,100% { opacity: 1; transform: scale(1); }
+
+    50% { opacity: 0.5; transform: scale(1.4); }
+
+  }
+
+  @keyframes bubbleRise {
+
+    0% { transform: translateY(100vh) scale(0); opacity: 0; }
+
+    10% { opacity: 0.5; }
+
+    90% { opacity: 0.2; }
+
+    100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+
+  }
+
+  @keyframes fadeInUp {
+
+    0% { opacity: 0; transform: translateY(32px); }
+
+    100% { opacity: 1; transform: translateY(0); }
+
+  }
+
+  /* ====== Ocean Background ====== */
+
+  .ocean-bg {
+
+    position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
+
+  }
+
+  .ocean-bg::before {
+
+    content: '';
+
+    position: absolute; inset: 0;
+
+    background: radial-gradient(ellipse at 30% 20%, #0a1628 0%, #050d1a 40%, #020810 100%);
+
+  }
+
+  .wave-layer {
+
+    position: absolute; left: -10%; width: 120%;
+
+    border-radius: 45%;
+
+    animation: wave 16s ease-in-out infinite alternate;
+
+    transform-origin: center bottom;
+
+  }
+
+  .wave-layer:nth-child(1) { bottom: -20%; height: 180px; opacity: 0.04; background: linear-gradient(180deg, transparent, rgba(30,120,200,0.25), transparent); animation-duration: 12s; }
+
+  .wave-layer:nth-child(2) { bottom: -12%; height: 220px; opacity: 0.035; background: linear-gradient(180deg, transparent, rgba(40,140,210,0.2), transparent); animation-duration: 15s; animation-delay: -2s; }
+
+  .wave-layer:nth-child(3) { bottom: -4%; height: 260px; opacity: 0.03; background: linear-gradient(180deg, transparent, rgba(50,160,220,0.18), transparent); animation-duration: 18s; animation-delay: -4s; }
+
+  .particle {
+
+    position: absolute; border-radius: 50%;
+
+    background: rgba(100,180,255,0.15);
+
+    animation: float 14s ease-in-out infinite;
+
+  }
+
+  /* ====== Navigation ====== */
+
+  nav {
+
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+
+    transition: all 0.4s ease;
+
+  }
+
+  nav.scrolled {
+
+    background: rgba(5,13,26,0.92);
+
+    backdrop-filter: blur(20px);
+
+    border-bottom: 1px solid var(--border);
+
+  }
+
+  .nav-inner {
+
+    max-width: 1280px; margin: 0 auto; padding: 16px 24px;
+
+    display: flex; align-items: center; justify-content: space-between;
+
+  }
+
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+
+  .nav-logo img { height: 44px; width: auto; display: block; }
+
+  .nav-links {
+
+    display: flex; align-items: center; gap: 4px;
+
+    list-style: none;
+
+  }
+
+  .nav-links a {
+
+    background: none; border: none; padding: 8px 16px;
+
+    font-family: var(--font-body); font-size: 14px; font-weight: 500;
+
+    color: var(--text-muted); cursor: pointer; transition: color 0.3s;
+
+    border-radius: 8px; text-decoration: none;
+
+  }
+
+  .nav-links a:hover { color: var(--text-bright); }
+
+  .btn-primary {
+
+    display: inline-flex; align-items: center; gap: 10px;
+
+    padding: 12px 26px;
+
+    font-family: var(--font-body); font-size: 14px; font-weight: 600;
+
+    color: #fff;
+
+    background: linear-gradient(135deg, var(--accent-deep) 0%, var(--accent) 100%);
+
+    border: none; border-radius: 10px;
+
+    cursor: pointer; text-decoration: none;
+
+    transition: all 0.3s ease;
+
+    box-shadow: 0 4px 20px rgba(52,152,219,0.25);
+
+  }
+
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(52,152,219,0.45); }
+
+  .btn-secondary {
+
+    display: inline-flex; align-items: center; gap: 10px;
+
+    padding: 12px 26px;
+
+    font-family: var(--font-body); font-size: 14px; font-weight: 500;
+
+    color: var(--text);
+
+    background: rgba(10,22,40,0.5);
+
+    border: 1px solid var(--border-hover); border-radius: 10px;
+
+    cursor: pointer; text-decoration: none;
+
+    transition: all 0.3s ease;
+
+    backdrop-filter: blur(10px);
+
+  }
+
+  .btn-secondary:hover { border-color: var(--accent); color: var(--text-bright); }
+
+  .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); margin: 5px 0; transition: all 0.3s; border-radius: 2px; }
+
+  /* ====== Section Layout ====== */
+
+  section { position: relative; z-index: 1; }
+
+  .section-wrap { max-width: 1280px; margin: 0 auto; padding: 120px 24px; }
+
+  .section-sm { padding: 80px 24px; }
+
+  .label-tag {
+
+    display: inline-flex; align-items: center; gap: 10px;
+
+    font-family: var(--font-display); font-weight: 600; font-size: 12px;
+
+    letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent);
+
+    margin-bottom: 20px;
+
+  }
+
+  .label-tag::before {
+
+    content: ''; width: 6px; height: 6px; background: var(--accent);
+
+    border-radius: 50%; animation: pulse 2s infinite;
+
+  }
+
+  .h-display {
+
+    font-family: var(--font-display); font-weight: 800; line-height: 1.03;
+
+    letter-spacing: -0.02em;
+
+    background: linear-gradient(135deg, #fff 0%, #a8d4f0 50%, var(--accent) 100%);
+
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+
+  }
+
+  .h-section {
+
+    font-family: var(--font-display); font-weight: 700; line-height: 1.1;
+
+    letter-spacing: -0.015em; color: var(--text-bright);
+
+  }
+
+  /* ====== Hero ====== */
+
+  #hero {
+
+    position: relative; min-height: 100vh;
+
+    display: flex; align-items: center; overflow: hidden;
+
+    padding-top: 100px;
+
+  }
+
+  .hero-visual {
+
+    position: absolute; top: 0; right: 0; width: 50%; height: 100%;
+
+    background-image: url('TideStrategey.png');
+
+    background-size: cover; background-position: center;
+
+    mask-image: linear-gradient(270deg, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
+
+    -webkit-mask-image: linear-gradient(270deg, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
+
+    opacity: 0.55;
+
+    z-index: 0;
+
+  }
+
+  .hero-content {
+
+    position: relative; z-index: 2;
+
+    max-width: 780px; padding: 0 24px;
+
+    margin: 0 auto;
+
+    width: 100%;
+
+  }
+
+  .hero-inner { max-width: 1280px; margin: 0 auto; width: 100%; }
+
+  .hero-heading {
+
+    font-size: clamp(48px, 7vw, 88px);
+
+    margin-bottom: 28px;
+
+  }
+
+  .hero-heading .accent-shimmer {
+
+    display: inline-block;
+
+    background: linear-gradient(90deg, #fff, var(--accent-bright), #fff);
+
+    background-size: 200% auto;
+
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+
+    animation: shimmer 4s linear infinite;
+
+  }
+
+  .hero-sub {
+
+    font-size: 19px; line-height: 1.6; color: var(--text-muted);
+
+    max-width: 580px; margin-bottom: 48px; font-weight: 300;
+
+  }
+
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  .hero-stats {
+
+    margin-top: 80px;
+
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
+
+    max-width: 800px;
+
+  }
+
+  .hero-stat .num {
+
+    font-family: var(--font-display); font-weight: 700; font-size: 36px;
+
+    color: var(--text-bright); letter-spacing: -0.02em;
+
+  }
+
+  .hero-stat .lbl {
+
+    font-size: 12px; color: var(--text-dim); margin-top: 4px;
+
+    letter-spacing: 0.5px; text-transform: uppercase;
+
+  }
+
+  /* ====== Tide Strategy ====== */
+
+  #tide { padding: 120px 0; }
+
+  .tide-container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+  .tide-hero-img {
+
+    width: 100%; max-height: 380px; object-fit: cover;
+
+    border-radius: 24px; margin: 48px 0;
+
+    box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+
+    border: 1px solid var(--border);
+
+  }
+
+  .tide-grid {
+
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+
+  }
+
+  .tide-step {
+
+    position: relative; padding: 48px 36px;
+
+    background: linear-gradient(180deg, rgba(15,30,55,0.5), rgba(10,22,40,0.5));
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    transition: all 0.4s ease;
+
+    overflow: hidden;
+
+  }
+
+  .tide-step::before {
+
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+
+    opacity: 0; transition: opacity 0.4s;
+
+  }
+
+  .tide-step:hover { border-color: var(--border-hover); transform: translateY(-4px); }
+
+  .tide-step:hover::before { opacity: 1; }
+
+  .tide-num {
+
+    font-family: var(--font-display); font-weight: 800;
+
+    font-size: 68px; line-height: 1;
+
+    background: linear-gradient(135deg, var(--accent), var(--teal));
+
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+
+    margin-bottom: 16px;
+
+  }
+
+  .tide-step h3 {
+
+    font-family: var(--font-display); font-weight: 700; font-size: 28px;
+
+    color: var(--text-bright); margin-bottom: 8px;
+
+  }
+
+  .tide-tag {
+
+    display: inline-block; padding: 4px 12px;
+
+    background: rgba(52,152,219,0.12); color: var(--accent);
+
+    font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+
+    text-transform: uppercase; border-radius: 100px;
+
+    margin-bottom: 20px;
+
+  }
+
+  .tide-step p {
+
+    font-size: 15px; line-height: 1.7; color: var(--text-muted);
+
+    margin-bottom: 16px;
+
+  }
+
+  .tide-step ul { list-style: none; margin-top: 16px; }
+
+  .tide-step ul li {
+
+    font-size: 14px; color: var(--text-muted); line-height: 1.6;
+
+    padding: 6px 0 6px 20px; position: relative;
+
+  }
+
+  .tide-step ul li::before {
+
+    content: ''; position: absolute; left: 0; top: 14px;
+
+    width: 8px; height: 1px; background: var(--accent);
+
+  }
+
+  /* ====== Packages ====== */
+
+  #packages { padding: 120px 0; }
+
+  .packages-container { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
+
+  .packages-header { max-width: 800px; margin-bottom: 64px; }
+
+  .packages-header h2 { font-size: clamp(40px, 5vw, 64px); margin-bottom: 16px; }
+
+  .packages-header p { font-size: 18px; color: var(--text-muted); line-height: 1.6; }
+
+  .packages-grid {
+
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+
+  }
+
+  .package-card {
+
+    position: relative; display: flex; flex-direction: column;
+
+    background: linear-gradient(180deg, rgba(15,30,55,0.6), rgba(10,22,40,0.8));
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px; overflow: hidden;
+
+    transition: all 0.4s ease;
+
+  }
+
+  .package-card:hover { transform: translateY(-8px); border-color: var(--border-hover); box-shadow: 0 30px 60px rgba(0,0,0,0.4); }
+
+  .package-card.best {
+
+    border-color: rgba(52,152,219,0.4);
+
+    background: linear-gradient(180deg, rgba(26,110,181,0.12), rgba(10,22,40,0.9));
+
+  }
+
+  .package-card.best::before {
+
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+
+    background: linear-gradient(90deg, var(--accent), var(--teal));
+
+  }
+
+  .package-badge {
+
+    position: absolute; top: 14px; right: 14px; z-index: 2;
+
+    padding: 6px 12px; background: linear-gradient(135deg, var(--accent), var(--teal));
+
+    color: #fff; font-size: 10px; font-weight: 800;
+
+    letter-spacing: 1.5px; border-radius: 100px;
+
+  }
+
+  .package-label-tag {
+
+    position: absolute; top: 14px; left: 14px; z-index: 2;
+
+    padding: 5px 10px; background: rgba(10,22,40,0.85);
+
+    color: var(--accent-bright); font-size: 9px; font-weight: 700;
+
+    letter-spacing: 1.5px; border-radius: 100px;
+
+    backdrop-filter: blur(10px);
+
+  }
+
+  .package-img-wrap {
+
+    position: relative; width: 100%; height: 200px;
+
+    overflow: hidden;
+
+  }
+
+  .package-img {
+
+    width: 100%; height: 100%; object-fit: cover; display: block;
+
+    transition: transform 0.6s ease;
+
+  }
+
+  .package-card:hover .package-img { transform: scale(1.06); }
+
+  .package-img-wrap::after {
+
+    content: ''; position: absolute; inset: 0;
+
+    background: linear-gradient(180deg, transparent 40%, rgba(10,22,40,0.95) 100%);
+
+  }
+
+  .package-body { padding: 28px 24px; display: flex; flex-direction: column; flex-grow: 1; }
+
+  .package-body h3 {
+
+    font-family: var(--font-display); font-weight: 700; font-size: 26px;
+
+    color: var(--text-bright); margin-bottom: 4px;
+
+  }
+
+  .package-tagline {
+
+    font-size: 12px; color: var(--accent); font-weight: 600;
+
+    letter-spacing: 1px; text-transform: uppercase;
+
+    margin-bottom: 20px;
+
+  }
+
+  .package-price { display: flex; align-items: baseline; gap: 6px; margin-bottom: 12px; }
+
+  .package-price .amount {
+
+    font-family: var(--font-display); font-weight: 800; font-size: 38px;
+
+    color: var(--text-bright);
+
+  }
+
+  .package-price .period { font-size: 14px; color: var(--text-muted); }
+
+  .package-setup {
+
+    font-size: 12px; color: var(--text-dim); margin-bottom: 24px;
+
+    padding-bottom: 24px; border-bottom: 1px solid var(--border);
+
+  }
+
+  .package-setup strong { color: var(--text-muted); }
+
+  .package-features { list-style: none; flex-grow: 1; margin-bottom: 24px; }
+
+  .package-features li {
+
+    display: flex; gap: 10px; align-items: flex-start;
+
+    font-size: 13px; color: var(--text-muted); line-height: 1.5;
+
+    padding: 7px 0;
+
+  }
+
+  .package-features li:first-child {
+
+    font-weight: 600; color: var(--text); border-bottom: 1px solid var(--border);
+
+    padding-bottom: 12px; margin-bottom: 6px;
+
+  }
+
+  .package-features li:first-child::before { display: none; }
+
+  .package-features li::before {
+
+    content: '✓'; color: var(--accent); font-weight: 700;
+
+    flex-shrink: 0; margin-top: 1px;
+
+  }
+
+  .package-cta {
+
+    width: 100%; display: flex; align-items: center; justify-content: center;
+
+    gap: 8px; padding: 13px;
+
+    border: 1px solid var(--border-hover); border-radius: 10px;
+
+    color: var(--text); background: transparent;
+
+    font-family: var(--font-body); font-size: 14px; font-weight: 600;
+
+    cursor: pointer; text-decoration: none;
+
+    transition: all 0.3s ease;
+
+  }
+
+  .package-cta:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  .package-card.best .package-cta {
+
+    background: linear-gradient(135deg, var(--accent-deep), var(--accent));
+
+    color: #fff; border-color: transparent;
+
+  }
+
+  .package-card.best .package-cta:hover { box-shadow: 0 10px 30px rgba(52,152,219,0.4); }
+
+  /* ====== Engines (8 Engines Section) ====== */
+
+  #engines {
+
+    padding: 120px 0;
+
+    background: linear-gradient(180deg, transparent, rgba(10,22,40,0.3));
+
+    border-top: 1px solid var(--border);
+
+    border-bottom: 1px solid var(--border);
+
+  }
+
+  .engines-container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+  .engines-header { max-width: 800px; margin-bottom: 56px; }
+
+  .engines-header h2 { font-size: clamp(40px, 5vw, 60px); margin-bottom: 16px; }
+
+  .engines-header p { font-size: 17px; color: var(--text-muted); line-height: 1.6; }
+
+  .engines-grid {
+
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+
+  }
+
+  .engine-card {
+
+    padding: 32px 24px;
+
+    background: rgba(10,22,40,0.5);
+
+    border: 1px solid var(--border); border-radius: 16px;
+
+    transition: all 0.3s ease;
+
+  }
+
+  .engine-card:hover { background: rgba(15,30,55,0.7); border-color: var(--border-hover); transform: translateY(-3px); }
+
+  .engine-icon {
+
+    width: 48px; height: 48px; border-radius: 12px;
+
+    display: flex; align-items: center; justify-content: center;
+
+    background: linear-gradient(135deg, rgba(52,152,219,0.15), rgba(26,188,156,0.08));
+
+    color: var(--accent); margin-bottom: 20px;
+
+    font-size: 22px;
+
+  }
+
+  .engine-card h4 {
+
+    font-family: var(--font-display); font-weight: 600; font-size: 17px;
+
+    color: var(--text-bright); margin-bottom: 8px;
+
+  }
+
+  .engine-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  /* ====== Who We Serve ====== */
+
+  #who-we-serve { padding: 120px 0; }
+
+  .serve-container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+  .serve-header { max-width: 800px; margin-bottom: 56px; }
+
+  .serve-header h2 { font-size: clamp(40px, 5vw, 60px); margin-bottom: 16px; }
+
+  .serve-header p { font-size: 17px; color: var(--text-muted); line-height: 1.6; }
+
+  .serve-grid {
+
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+
+  }
+
+  .serve-card {
+
+    padding: 28px 20px; text-align: center;
+
+    background: rgba(10,22,40,0.5);
+
+    border: 1px solid var(--border); border-radius: 14px;
+
+    transition: all 0.3s ease;
+
+  }
+
+  .serve-card:hover { border-color: var(--border-hover); transform: translateY(-3px); }
+
+  .serve-icon { font-size: 28px; margin-bottom: 12px; }
+
+  .serve-card h4 {
+
+    font-family: var(--font-display); font-weight: 600; font-size: 15px;
+
+    color: var(--text-bright); margin-bottom: 6px;
+
+  }
+
+  .serve-card p { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+  /* ====== Testimonials ====== */
+
+  #testimonials {
+
+    padding: 120px 0;
+
+    background: linear-gradient(180deg, rgba(10,22,40,0.3), transparent);
+
+    border-top: 1px solid var(--border);
+
+  }
+
+  .test-container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+  .test-header { max-width: 800px; margin-bottom: 56px; }
+
+  .test-header h2 { font-size: clamp(40px, 5vw, 60px); margin-bottom: 16px; }
+
+  .test-header p { font-size: 17px; color: var(--text-muted); line-height: 1.6; }
+
+  .test-grid {
+
+    display: grid; grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+  }
+
+  .test-card {
+
+    position: relative; padding: 32px 28px;
+
+    background: linear-gradient(180deg, rgba(15,30,55,0.5), rgba(10,22,40,0.7));
+
+    border: 1px solid var(--border); border-radius: 16px;
+
+    transition: all 0.3s ease;
+
+  }
+
+  .test-card:hover { border-color: var(--border-hover); }
+
+  .test-card::before {
+
+    content: '"'; position: absolute; top: 10px; left: 20px;
+
+    font-family: Georgia, serif; font-size: 72px; line-height: 1;
+
+    color: rgba(52,152,219,0.12);
+
+  }
+
+  .test-stars {
+
+    color: var(--gold); font-size: 14px; letter-spacing: 2px;
+
+    margin-bottom: 16px; position: relative; z-index: 1;
+
+  }
+
+  .test-text {
+
+    font-size: 14px; line-height: 1.75; color: var(--text);
+
+    margin-bottom: 20px; font-style: italic;
+
+    position: relative; z-index: 1;
+
+  }
+
+  .test-author {
+
+    border-top: 1px solid var(--border); padding-top: 16px;
+
+  }
+
+  .test-author strong {
+
+    display: block; font-size: 14px; color: var(--text-bright); font-weight: 600;
+
+  }
+
+  .test-author span {
+
+    font-size: 12px; color: var(--accent); margin-top: 2px; display: block;
+
+  }
+
+  /* ====== AEO Explainer ====== */
+
+  #aeo {
+
+    padding: 120px 0;
+
+    background: linear-gradient(160deg, var(--bg-2) 0%, var(--bg-1) 100%);
+
+    border-bottom: 1px solid var(--border);
+
+  }
+
+  .aeo-container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+  .aeo-grid {
+
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+
+  }
+
+  .aeo-text h2 { font-size: clamp(36px, 4.5vw, 54px); margin-bottom: 24px; }
+
+  .aeo-text p { font-size: 16px; line-height: 1.8; color: var(--text-muted); margin-bottom: 20px; }
+
+  .aeo-text p strong { color: var(--text-bright); }
+
+  .aeo-text p em { color: var(--accent); font-style: normal; font-weight: 600; }
+
+  .aeo-comparison { display: flex; flex-direction: column; gap: 14px; }
+
+  .aeo-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+  .aeo-col {
+
+    padding: 20px; border-radius: 12px;
+
+    background: rgba(10,22,40,0.5); border: 1px solid var(--border);
+
+  }
+
+  .aeo-col.highlight { border-color: var(--accent); background: rgba(52,152,219,0.05); }
+
+  .aeo-col-label {
+
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+
+    text-transform: uppercase; margin-bottom: 10px; color: var(--text-muted);
+
+  }
+
+  .aeo-col.highlight .aeo-col-label { color: var(--accent); }
+
+  .aeo-col p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  /* ====== FAQ ====== */
+
+  #faq { padding: 120px 0; }
+
+  .faq-container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+
+  .faq-header { margin-bottom: 48px; text-align: center; }
+
+  .faq-header .label-tag { justify-content: center; }
+
+  .faq-header h2 { font-size: clamp(36px, 4.5vw, 54px); }
+
+  .faq-item { border-bottom: 1px solid var(--border); }
+
+  .faq-q {
+
+    display: flex; justify-content: space-between; align-items: center;
+
+    padding: 22px 0; cursor: pointer;
+
+    font-family: var(--font-display); font-weight: 600; font-size: 17px;
+
+    color: var(--text-bright); transition: color 0.3s;
+
+    background: none; border: none; width: 100%; text-align: left;
+
+  }
+
+  .faq-q:hover { color: var(--accent); }
+
+  .faq-plus {
+
+    font-size: 24px; font-weight: 300; color: var(--accent);
+
+    transition: transform 0.3s; flex-shrink: 0; margin-left: 16px;
+
+  }
+
+  .faq-item.open .faq-plus { transform: rotate(45deg); }
+
+  .faq-a {
+
+    max-height: 0; overflow: hidden;
+
+    transition: max-height 0.4s ease;
+
+  }
+
+  .faq-item.open .faq-a { max-height: 500px; }
+
+  .faq-a p {
+
+    padding-bottom: 24px;
+
+    font-size: 15px; line-height: 1.7; color: var(--text-muted);
+
+  }
+
+  /* ====== CTA Section ====== */
+
+  #cta {
+
+    padding: 100px 0;
+
+    background: linear-gradient(135deg, rgba(26,110,181,0.08), rgba(26,188,156,0.05));
+
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+
+  }
+
+  .cta-container { max-width: 900px; margin: 0 auto; padding: 0 24px; text-align: center; }
+
+  .cta-container h2 { font-size: clamp(36px, 4.5vw, 56px); margin-bottom: 20px; }
+
+  .cta-container p {
+
+    font-size: 18px; line-height: 1.6; color: var(--text-muted);
+
+    max-width: 640px; margin: 0 auto 40px;
+
+  }
+
+  .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  /* ====== Footer ====== */
+
+  footer {
+
+    position: relative; z-index: 1;
+
+    border-top: 1px solid var(--border);
+
+    background: var(--bg-0);
+
+  }
+
+  .footer-inner { max-width: 1280px; margin: 0 auto; padding: 72px 24px 40px; }
+
+  .footer-grid {
+
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+
+    margin-bottom: 56px;
+
+  }
+
+  .footer-brand img { height: 48px; margin-bottom: 20px; }
+
+  .footer-brand p {
+
+    font-size: 14px; line-height: 1.7; color: var(--text-dim);
+
+    max-width: 320px; margin-bottom: 28px;
+
+  }
+
+  .social-links { display: flex; gap: 10px; flex-wrap: wrap; }
+
+  .social-link {
+
+    display: flex; align-items: center; justify-content: center;
+
+    width: 36px; height: 36px;
+
+    background: rgba(10,22,40,0.7);
+
+    border: 1px solid var(--border); border-radius: 8px;
+
+    color: var(--text-muted); text-decoration: none;
+
+    transition: all 0.3s ease;
+
+  }
+
+  .social-link:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+  .footer-col h4 {
+
+    font-family: var(--font-display); font-weight: 700; font-size: 13px;
+
+    color: var(--text-bright); margin-bottom: 20px;
+
+    letter-spacing: 1.5px; text-transform: uppercase;
+
+  }
+
+  .footer-col ul { list-style: none; }
+
+  .footer-col ul li { margin-bottom: 10px; }
+
+  .footer-col ul li a {
+
+    font-size: 14px; color: var(--text-dim); text-decoration: none;
+
+    transition: color 0.3s;
+
+  }
+
+  .footer-col ul li a:hover { color: var(--accent-bright); }
+
+  .footer-bottom {
+
+    border-top: 1px solid var(--border); padding-top: 28px;
+
+    display: flex; justify-content: space-between; align-items: center;
+
+    flex-wrap: wrap; gap: 16px;
+
+  }
+
+  .footer-bottom p { font-size: 13px; color: var(--text-faint); }
+
+  /* ====== Cookie Banner ====== */
+
+  #cookie-banner {
+
+    position: fixed; bottom: 20px; left: 20px; right: 20px;
+
+    max-width: 600px; margin: 0 auto;
+
+    background: rgba(5,13,26,0.98); backdrop-filter: blur(20px);
+
+    border: 1px solid var(--border-hover); border-radius: 16px;
+
+    padding: 20px 24px; z-index: 8000;
+
+    display: flex; gap: 20px; align-items: center; flex-wrap: wrap;
+
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+
+  }
+
+  #cookie-banner p { font-size: 13px; color: var(--text-muted); flex: 1; min-width: 220px; line-height: 1.5; }
+
+  #cookie-banner a { color: var(--accent); text-decoration: none; }
+
+  .cookie-actions { display: flex; gap: 10px; }
+
+  .btn-cookie-accept {
+
+    padding: 10px 20px; font-size: 13px; font-weight: 600;
+
+    background: var(--accent); color: #fff; border: none; border-radius: 8px;
+
+    cursor: pointer; font-family: var(--font-body);
+
+  }
+
+  .btn-cookie-decline {
+
+    padding: 10px 20px; font-size: 13px; font-weight: 500;
+
+    background: transparent; color: var(--text-muted);
+
+    border: 1px solid var(--border-hover); border-radius: 8px;
+
+    cursor: pointer; font-family: var(--font-body);
+
+  }
+
+  /* ====== Floating ADA Accessibility Widget ====== */
+
+  #ada-widget {
+
+    position: fixed; right: 16px; top: 50%; transform: translateY(-50%);
+
+    z-index: 9000;
+
+  }
+
+  .ada-trigger {
+
+    width: 52px; height: 52px; border-radius: 50%;
+
+    background: linear-gradient(135deg, var(--accent-deep), var(--accent));
+
+    border: 2px solid rgba(255,255,255,0.1);
+
+    color: #fff; cursor: pointer;
+
+    display: flex; align-items: center; justify-content: center;
+
+    box-shadow: 0 6px 24px rgba(52,152,219,0.5);
+
+    transition: all 0.3s ease;
+
+  }
+
+  .ada-trigger:hover { transform: scale(1.08); box-shadow: 0 10px 30px rgba(52,152,219,0.7); }
+
+  .ada-trigger svg { width: 26px; height: 26px; }
+
+  .ada-panel {
+
+    position: absolute; right: 64px; top: 50%; transform: translateY(-50%);
+
+    width: 280px;
+
+    background: rgba(5,13,26,0.98); backdrop-filter: blur(20px);
+
+    border: 1px solid var(--border-hover); border-radius: 16px;
+
+    padding: 20px; opacity: 0; visibility: hidden;
+
+    transition: all 0.3s ease;
+
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+
+  }
+
+  .ada-panel.open { opacity: 1; visibility: visible; right: 70px; }
+
+  .ada-panel h4 {
+
+    font-family: var(--font-display); font-weight: 700; font-size: 15px;
+
+    color: var(--text-bright); margin-bottom: 14px;
+
+  }
+
+  .ada-opt {
+
+    display: flex; align-items: center; justify-content: space-between;
+
+    padding: 10px 0; border-bottom: 1px solid var(--border);
+
+    font-size: 13px; color: var(--text);
+
+  }
+
+  .ada-opt:last-child { border-bottom: none; }
+
+  .ada-btn-group { display: flex; gap: 6px; }
+
+  .ada-btn {
+
+    width: 28px; height: 28px; border-radius: 6px;
+
+    background: rgba(10,22,40,0.7); border: 1px solid var(--border);
+
+    color: var(--text-muted); cursor: pointer;
+
+    display: flex; align-items: center; justify-content: center;
+
+    font-size: 14px; font-family: var(--font-body);
+
+    transition: all 0.2s ease;
+
+  }
+
+  .ada-btn:hover, .ada-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+  .ada-reset {
+
+    width: 100%; margin-top: 14px; padding: 8px;
+
+    background: transparent; color: var(--accent);
+
+    border: 1px solid var(--border-hover); border-radius: 8px;
+
+    font-size: 12px; font-weight: 600; cursor: pointer;
+
+    font-family: var(--font-body); transition: all 0.2s;
+
+  }
+
+  .ada-reset:hover { background: var(--accent); color: #fff; }
+
+  /* Accessibility body classes */
+
+  body.ada-large-text { font-size: 18px; }
+
+  body.ada-xlarge-text { font-size: 22px; }
+
+  body.ada-high-contrast { filter: contrast(1.4) saturate(1.2); }
+
+  body.ada-grayscale { filter: grayscale(100%); }
+
+  body.ada-links-underline a { text-decoration: underline !important; }
+
+  body.ada-readable { font-family: Arial, sans-serif !important; letter-spacing: 0.03em !important; }
+
+  /* ====== Animations on scroll ====== */
+
+  .reveal {
+
+    opacity: 0; transform: translateY(32px);
+
+    transition: opacity 0.8s cubic-bezier(.16,1,.3,1), transform 0.8s cubic-bezier(.16,1,.3,1);
+
+  }
+
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ====== Responsive ====== */
+
+  @media (max-width: 1024px) {
+
+    .packages-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .engines-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .test-grid { grid-template-columns: 1fr 1fr; }
+
+    .serve-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .aeo-grid { grid-template-columns: 1fr; gap: 48px; }
+
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+
+    .hero-visual { width: 60%; opacity: 0.35; }
+
+    .hero-stats { grid-template-columns: repeat(2, 1fr); }
+
+  }
+
+  @media (max-width: 768px) {
+
+    .hamburger { display: block; }
+
+    .nav-links {
+
+      display: none; flex-direction: column; position: absolute;
+
+      top: 100%; left: 0; right: 0; padding: 20px;
+
+      background: rgba(5,13,26,0.97); backdrop-filter: blur(20px);
+
+      border-bottom: 1px solid var(--border);
+
+      align-items: stretch;
+
+    }
+
+    .nav-links.open { display: flex; }
+
+    .section-wrap, #tide, #packages, #engines, #who-we-serve, #testimonials, #aeo, #faq { padding: 72px 0; }
+
+    .hero-heading { font-size: clamp(36px, 10vw, 56px); }
+
+    .tide-grid { grid-template-columns: 1fr; }
+
+    .packages-grid { grid-template-columns: 1fr; }
+
+    .engines-grid { grid-template-columns: 1fr; }
+
+    .test-grid { grid-template-columns: 1fr; }
+
+    .serve-grid { grid-template-columns: 1fr 1fr; }
+
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+
+    .footer-bottom { flex-direction: column; text-align: center; }
+
+    .hero-stats { grid-template-columns: 1fr 1fr; gap: 20px; }
+
+    .hero-visual { display: none; }
+
+    .ada-panel { width: 260px; right: 64px; }
+
+    #ada-widget { top: auto; bottom: 90px; transform: none; }
+
+    .ada-panel { top: auto; bottom: 0; transform: none; }
+
+    .ada-panel.open { bottom: 0; }
+
+  }
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Skip Link -->
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- Ocean animated background -->
+
+<div class="ocean-bg" aria-hidden="true">
+
+  <div class="wave-layer"></div>
+
+  <div class="wave-layer"></div>
+
+  <div class="wave-layer"></div>
+
+  <div class="particle" style="width:2px;height:2px;left:15%;top:20%;animation-delay:-3s;"></div>
+
+  <div class="particle" style="width:3px;height:3px;left:35%;top:60%;animation-delay:-7s;"></div>
+
+  <div class="particle" style="width:2px;height:2px;left:55%;top:35%;animation-delay:-1s;"></div>
+
+  <div class="particle" style="width:2px;height:2px;left:75%;top:75%;animation-delay:-9s;"></div>
+
+  <div class="particle" style="width:3px;height:3px;left:25%;top:45%;animation-delay:-5s;"></div>
+
+  <div class="particle" style="width:2px;height:2px;left:85%;top:15%;animation-delay:-11s;"></div>
+
+  <div class="particle" style="width:2px;height:2px;left:10%;top:80%;animation-delay:-6s;"></div>
+
+  <div class="particle" style="width:3px;height:3px;left:65%;top:50%;animation-delay:-2s;"></div>
+
+  <div class="particle" style="width:2px;height:2px;left:45%;top:25%;animation-delay:-8s;"></div>
+
+  <div class="particle" style="width:2px;height:2px;left:90%;top:60%;animation-delay:-4s;"></div>
+
+</div>
+
+<!-- Navigation -->
+
+<nav id="nav" role="navigation" aria-label="Main">
+
+  <div class="nav-inner">
+
+    <a href="#hero" class="nav-logo" aria-label="Blu Ocean Innovations — Home">
+
+      <img src="BOI-Logo.png" alt="Blu Ocean Innovations" />
+
+    </a>
+
+    <ul class="nav-links" id="nav-links" role="menubar">
+
+      <li role="none"><a href="#tide" role="menuitem">Strategy</a></li>
+
+      <li role="none"><a href="#packages" role="menuitem">Packages</a></li>
+
+      <li role="none"><a href="#engines" role="menuitem">Engines</a></li>
+
+      <li role="none"><a href="#who-we-serve" role="menuitem">Who We Serve</a></li>
+
+      <li role="none"><a href="#faq" role="menuitem">FAQ</a></li>
+
+      <li role="none"><a href="https://calendly.com/d/csyg-g3t-f6g" class="btn-primary" target="_blank" rel="noopener" style="padding:10px 22px;">Book Discovery Call</a></li>
+
+    </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+
+      <span></span><span></span><span></span>
+
+    </button>
+
+  </div>
+
+</nav>
+
+<main id="main">
+
+<!-- ====== HERO ====== -->
+
+<section id="hero" aria-label="Hero">
+
+  <div class="hero-visual" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+
+    <div class="hero-content">
+
+      <div class="label-tag">The AI Visibility Agency</div>
+
+      <h1 class="h-display hero-heading">
+
+        Own the <span class="accent-shimmer">AI Conversation.</span>
+
+      </h1>
+
+      <p class="hero-sub">Prospects don't start with your website — they ask AI. We control what ChatGPT, Gemini, Grok, and Google AI say about your business. Permanent authority infrastructure for the AI era.</p>
+
+      <div class="hero-actions">
+
+        <a href="https://calendly.com/d/csyg-g3t-f6g" class="btn-primary" target="_blank" rel="noopener">Book Discovery Call →</a>
+
+        <a href="https://mybizreport.com/ai-audit/aeo" class="btn-secondary" target="_blank" rel="noopener">Get Your AI Score</a>
+
+      </div>
+
+      <div class="hero-stats">
+
+        <div class="hero-stat">
+
+          <div class="num">60–90</div>
+
+          <div class="lbl">Days to Authority</div>
+
+        </div>
+
+        <div class="hero-stat">
+
+          <div class="num">8</div>
+
+          <div class="lbl">Authority Engines</div>
+
+        </div>
+
+        <div class="hero-stat">
+
+          <div class="num">400+</div>
+
+          <div class="lbl">Citation Outlets</div>
+
+        </div>
+
+        <div class="hero-stat">
+
+          <div class="num">5★</div>
+
+          <div class="lbl">Client Satisfaction</div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ====== TIDE STRATEGY ====== -->
+
+<section id="tide" aria-labelledby="tide-heading">
+
+  <div class="tide-container">
+
+    <div class="reveal">
+
+      <div class="label-tag">Our Framework</div>
+
+      <h2 id="tide-heading" class="h-section" style="font-size:clamp(40px,5vw,64px);margin-bottom:16px;">The Tide Strategy</h2>
+
+      <p style="font-size:18px;color:var(--text-muted);max-width:700px;line-height:1.6;">Like the tide that lifts all boats, our SAE-AI framework elevates every trust and authority signal — so AI systems find, verify, and recommend you with confidence.</p>
+
+    </div>
+
+    <img src="TideStrategey.png" alt="Ocean wave at sunset — the Tide Strategy in motion" class="tide-hero-img reveal" loading="lazy" />
+
+    <div class="tide-grid">
+
+      <div class="tide-step reveal">
+
+        <div class="tide-num">01</div>
+
+        <h3>Solidify</h3>
+
+        <span class="tide-tag">Foundation</span>
+
+        <p>Strengthen every signal that creates trust at first glance. AI can't recommend what it can't verify.</p>
+
+        <ul>
+
+          <li>Google Business Profile optimization</li>
+
+          <li>Review growth &amp; reputation monitoring</li>
+
+          <li>NAP consistency across directories</li>
+
+          <li>Trust-first positioning</li>
+
+        </ul>
+
+      </div>
+
+      <div class="tide-step reveal">
+
+        <div class="tide-num">02</div>
+
+        <h3>Amplify</h3>
+
+        <span class="tide-tag">Market-Wide Trust</span>
+
+        <p>Repurpose your strongest credibility signals so prospects encounter proof wherever they look.</p>
+
+        <ul>
+
+          <li>Social proof content from client sentiment</li>
+
+          <li>Website trust sections &amp; proof placements</li>
+
+          <li>Multi-platform authority distribution</li>
+
+          <li>Press &amp; citation outreach</li>
+
+        </ul>
+
+      </div>
+
+      <div class="tide-step reveal">
+
+        <div class="tide-num">03</div>
+
+        <h3>Elevate</h3>
+
+        <span class="tide-tag">AI Recommendation</span>
+
+        <p>Align your digital footprint so AI-driven discovery understands, trusts, and surfaces your business.</p>
+
+        <ul>
+
+          <li>AEO (Answer Engine Optimization)</li>
+
+          <li>Structured data &amp; entity building</li>
+
+          <li>AI-readable content alignment</li>
+
+          <li>Citation tracking across platforms</li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ====== PACKAGES ====== -->
+
+<section id="packages" aria-labelledby="packages-heading">
+
+  <div class="packages-container">
+
+    <div class="packages-header reveal">
+
+      <div class="label-tag">Investment Tiers</div>
+
+      <h2 id="packages-heading" class="h-section">Choose Your Authority Level</h2>
+
+      <p>From self-guided insights to white-glove domination — there's a tier built for where you are and where you're headed.</p>
+
+    </div>
+
+    <div class="packages-grid">
+
+      <!-- SEA TURTLE -->
+
+      <article class="package-card reveal" aria-label="Sea Turtle Package — Entry Visibility">
+
+        <div class="package-label-tag">SELF-GUIDED</div>
+
+        <div class="package-img-wrap">
+
+          <img src="SeaTurtle.png" alt="Sea turtle gliding underwater — representing steady, foundational AI visibility" class="package-img" loading="lazy" />
+
+        </div>
+
+        <div class="package-body">
+
+          <h3>Sea Turtle</h3>
+
+          <div class="package-tagline">Entry Visibility · Tier 1</div>
+
+          <div class="package-price">
+
+            <span class="amount">$97</span>
+
+            <span class="period">/month</span>
+
+          </div>
+
+          <div class="package-setup"><strong>$297 setup</strong> · Self-guided tier</div>
+
+          <ul class="package-features">
+
+            <li>Monthly AI visibility report</li>
+
+            <li>Coverage: ChatGPT, Gemini, Grok &amp; Google AI</li>
+
+            <li>Step-by-step fix guide with prioritized actions</li>
+
+            <li>Citation tracking — where you're cited &amp; missing</li>
+
+            <li>Competitor snapshot of AI visibility</li>
+
+            <li>Delivered to your inbox every 30 days</li>
+
+          </ul>
+
+          <a href="https://calendly.com/d/csyg-g3t-f6g" class="package-cta" target="_blank" rel="noopener">Start Here →</a>
+
+        </div>
+
+      </article>
+
+      <!-- DOLPHIN -->
+
+      <article class="package-card reveal" aria-label="Dolphin Package — Citation Authority">
+
+        <div class="package-label-tag">DONE-FOR-YOU</div>
+
+        <div class="package-img-wrap">
+
+          <img src="Dolphin.png" alt="Dolphin leaping at sunset — agile, intelligent AI authority building" class="package-img" loading="lazy" style="object-position:center 30%;" />
+
+        </div>
+
+        <div class="package-body">
+
+          <h3>Dolphin</h3>
+
+          <div class="package-tagline">Citation Authority · Tier 2</div>
+
+          <div class="package-price">
+
+            <span class="amount">$497</span>
+
+            <span class="period">/month</span>
+
+          </div>
+
+          <div class="package-setup"><strong>$1,497 setup</strong> · Done-for-you</div>
+
+          <ul class="package-features">
+
+            <li>Everything in Sea Turtle, plus:</li>
+
+            <li>Active AI citation campaigns</li>
+
+            <li>90-day measurable visibility goal</li>
+
+            <li>Citation monitoring &amp; month-over-month tracking</li>
+
+            <li>AI-optimized content crafted to earn citations</li>
+
+            <li>Continuous citation building monthly</li>
+
+          </ul>
+
+          <a href="https://calendly.com/d/csyg-g3t-f6g" class="package-cta" target="_blank" rel="noopener">Get Started →</a>
+
+        </div>
+
+      </article>
+
+      <!-- SHARK (Best Value) -->
+
+      <article class="package-card best reveal" aria-label="Shark Package — Best Value">
+
+        <div class="package-badge">★ BEST VALUE</div>
+
+        <div class="package-img-wrap">
+
+          <img src="Shark.png" alt="Great white shark in clear blue — dominant AI market authority" class="package-img" loading="lazy" />
+
+        </div>
+
+        <div class="package-body">
+
+          <h3>Shark</h3>
+
+          <div class="package-tagline">Strategy &amp; Execution · Tier 3</div>
+
+          <div class="package-price">
+
+            <span class="amount">$997</span>
+
+            <span class="period">/month</span>
+
+          </div>
+
+          <div class="package-setup"><strong>$2,997 setup</strong> · Complete roadmap</div>
+
+          <ul class="package-features">
+
+            <li>Everything in Dolphin, plus:</li>
+
+            <li>Complete AI roadmap &amp; blueprint</li>
+
+            <li>Full implementation — we execute every step</li>
+
+            <li>Website updates &amp; AI-ready optimization</li>
+
+            <li>Visibility across every major AI platform</li>
+
+            <li>Custom strategy for your market &amp; goals</li>
+
+            <li>60–90 day measurable improvements</li>
+
+          </ul>
+
+          <a href="https://calendly.com/d/csyg-g3t-f6g" class="package-cta" target="_blank" rel="noopener">Get Started →</a>
+
+        </div>
+
+      </article>
+
+      <!-- WHALE -->
+
+      <article class="package-card reveal" aria-label="Whale Package — Complete Domination">
+
+        <div class="package-label-tag">WHITE GLOVE</div>
+
+        <div class="package-img-wrap">
+
+          <img src="Whale.png" alt="Humpback whale breaching — total AI presence and domination" class="package-img" loading="lazy" style="object-position:center 35%;" />
+
+        </div>
+
+        <div class="package-body">
+
+          <h3>Whale</h3>
+
+          <div class="package-tagline">Complete Domination · Tier 4</div>
+
+          <div class="package-price">
+
+            <span class="amount">$2,997</span>
+
+            <span class="period">/month</span>
+
+          </div>
+
+          <div class="package-setup"><strong>$4,997 setup</strong> · White-glove execution</div>
+
+          <ul class="package-features">
+
+            <li>Everything in Shark, plus:</li>
+
+            <li>Full AI citation campaigns at scale</li>
+
+            <li>Complete website AI-search optimization</li>
+
+            <li>Full Google Business Profile optimization</li>
+
+            <li>Articles, press &amp; authority content at scale</li>
+
+            <li>Become THE AI-recommended choice</li>
+
+            <li>Priority white-glove execution</li>
+
+            <li>Quarterly strategy refresh &amp; on-call access</li>
+
+          </ul>
+
+          <a href="https://calendly.com/d/csyg-g3t-f6g" class="package-cta" target="_blank" rel="noopener">Go White Glove →</a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ====== 8 ENGINES ====== -->
+
+<section id="engines" aria-labelledby="engines-heading">
+
+  <div class="engines-container">
+
+    <div class="engines-header reveal">
+
+      <div class="label-tag">The System</div>
+
+      <h2 id="engines-heading" class="h-section">8 Engines. One Unified System.</h2>
+
+      <p>Most businesses fragment their marketing across 7+ vendors paying $13K–$42K/month. We run all 8 engines in concert — from a single platform, with AI-native strategy woven through every layer.</p>
+
+    </div>
+
+    <div class="engines-grid">
+
+      <div class="engine-card reveal">
+
+        <div class="engine-icon">
+
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.73 21a2 2 0 01-3.46 0" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+        </div>
+
+        <h4>Social Media Engine</h4>
+
+        <p>30–45 branded posts/mo across LinkedIn, Facebook, Instagram &amp; X</p>
+
+      </div>
+
+      <div class="engine-card reveal">
+
+        <div class="engine-icon">
+
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+
+        </div>
+
+        <h4>Blog &amp; Content Engine</h4>
+
+        <p>Long-form authority articles &amp; pillar pages built to earn AI citations</p>
+
+      </div>
+
+      <div class="engine-card reveal">
+
+        <div class="engine-icon">
+
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 10h8M8 14h5"/></svg>
+
+        </div>
+
+        <h4>Press Release Engine</h4>
+
+        <p>AP-style distribution across 400+ outlets with AI-pickup syndication</p>
+
+      </div>
+
+      <div class="engine-card reveal">
+
+        <div class="engine-icon">
+
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+
+        </div>
+
+        <h4>GMB Engine</h4>
+
+        <p>Google Business Profile optimization &amp; AI-ready response frameworks</p>
+
+      </div>
+
+      <div class="engine-card reveal">
+
+        <div class="engine-icon">
+
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+
+        </div>
+
+        <h4>AI Authority Engine</h4>
+
+        <p>Entity building so ChatGPT, Grok &amp; Gemini cite you by name</p>
+
+      </div>
+
+      <div class="engine-card reveal">
+
+        <div class="engine-icon">
+
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+
+        </div>
+
+        <h4>SEO Engine</h4>
+
+        <p>Meta architecture &amp; technical SEO for traditional + AI search</p>
+
+      </div>
+
+      <div class="engine-card reveal">
+
+        <div class="engine-icon">
+
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+
+        </div>
+
+        <h4>Reputation Engine</h4>
+
+        <p>Review automation, monitoring, mitigation &amp; sentiment recovery</p>
+
+      </div>
+
+      <div class="engine-card reveal">
+
+        <div class="engine-icon">
+
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+
+        </div>
+
+        <h4>KPI Engine</h4>
+
+        <p>Executive narrative reports, visibility scores &amp; ROI storytelling</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ====== WHO WE SERVE ====== -->
+
+<section id="who-we-serve" aria-labelledby="serve-heading">
+
+  <div class="serve-container">
+
+    <div class="serve-header reveal">
+
+      <div class="label-tag">Ideal Clients</div>
+
+      <h2 id="serve-heading" class="h-section">Who We Serve</h2>
+
+      <p>We specialize in high-trust professional services and elective care — industries where reputation is the primary buying signal and AI is reshaping how clients find you.</p>
+
+    </div>
+
+    <div class="serve-grid">
+
+      <div class="serve-card reveal"><div class="serve-icon">⚖️</div><h4>Law Firms</h4><p>Legal clients search AI first. Be the firm it recommends.</p></div>
+
+      <div class="serve-card reveal"><div class="serve-icon">🦷</div><h4>Dental Practices</h4><p>New patient acquisition depends on reviews &amp; local AI visibility.</p></div>
+
+      <div class="serve-card reveal"><div class="serve-icon">💉</div><h4>Medical Spas</h4><p>High-intent buyers research elective procedures extensively.</p></div>
+
+      <div class="serve-card reveal"><div class="serve-icon">📊</div><h4>Financial Advisors</h4><p>Trust is everything. Build the verifiable signals AI needs.</p></div>
+
+      <div class="serve-card reveal"><div class="serve-icon">🏡</div><h4>Real Estate</h4><p>Buyers search AI before searching Google. Be found.</p></div>
+
+      <div class="serve-card reveal"><div class="serve-icon">🏋️</div><h4>Health &amp; Wellness</h4><p>Chiropractors, PT, wellness clinics thrive on local trust signals.</p></div>
+
+      <div class="serve-card reveal"><div class="serve-icon">🎓</div><h4>Coaches &amp; Consultants</h4><p>Thought leadership and AI visibility are inseparable.</p></div>
+
+      <div class="serve-card reveal"><div class="serve-icon">🏥</div><h4>Medical Practices</h4><p>Patients trust AI recommendations more than ever.</p></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ====== AEO EXPLAINER ====== -->
+
+<section id="aeo" aria-labelledby="aeo-heading">
+
+  <div class="aeo-container">
+
+    <div class="aeo-grid">
+
+      <div class="aeo-text reveal">
+
+        <div class="label-tag">Education</div>
+
+        <h2 id="aeo-heading" class="h-section">What Is AEO?</h2>
+
+        <p>AEO stands for <strong>Answer Engine Optimization</strong> — the practice of optimizing your business to be surfaced and recommended by AI-powered tools, not just traditional search engines.</p>
+
+        <p>When someone asks ChatGPT <em>"Who's the best divorce attorney in Phoenix?"</em> or asks Perplexity <em>"What's a highly-rated medical spa near me?"</em> — those are the moments AEO wins or loses.</p>
+
+        <p>SEO gets you ranked in blue links. AEO gets you <em>recommended by AI.</em> Both matter. But AEO is where new clients are increasingly being won.</p>
+
+      </div>
+
+      <div class="aeo-comparison reveal">
+
+        <div class="aeo-row">
+
+          <div class="aeo-col"><div class="aeo-col-label">SEO</div><p>Targets keyword rankings in Google's blue link results</p></div>
+
+          <div class="aeo-col highlight"><div class="aeo-col-label">AEO</div><p>Targets AI summaries, recommendation boxes &amp; assistant responses</p></div>
+
+        </div>
+
+        <div class="aeo-row">
+
+          <div class="aeo-col"><div class="aeo-col-label">SEO</div><p>Measured in clicks and impressions</p></div>
+
+          <div class="aeo-col highlight"><div class="aeo-col-label">AEO</div><p>Measured in citations, recommendations &amp; shortlist mentions</p></div>
+
+        </div>
+
+        <div class="aeo-row">
+
+          <div class="aeo-col"><div class="aeo-col-label">SEO</div><p>Built on keywords and backlinks</p></div>
+
+          <div class="aeo-col highlight"><div class="aeo-col-label">AEO</div><p>Built on E-E-A-T signals, structured data &amp; verifiable credibility</p></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ====== TESTIMONIALS ====== -->
+
+<section id="testimonials" aria-labelledby="test-heading">
+
+  <div class="test-container">
+
+    <div class="test-header reveal">
+
+      <div class="label-tag">Client Voices</div>
+
+      <h2 id="test-heading" class="h-section">What Our Clients Say</h2>
+
+      <p>Real feedback from the businesses we've worked with — their words, not ours.</p>
+
+    </div>
+
+    <div class="test-grid">
+
+      <article class="test-card reveal">
+
+        <div class="test-stars" aria-label="5 stars">★★★★★</div>
+
+        <p class="test-text">I would definitely do business with these guys again — totally professional, on time, and efficient.</p>
+
+        <div class="test-author">
+
+          <strong>Darrell L.</strong>
+
+          <span>Verified Client</span>
+
+        </div>
+
+      </article>
+
+      <article class="test-card reveal">
+
+        <div class="test-stars" aria-label="5 stars">★★★★★</div>
+
+        <p class="test-text">Nathan and his team were great to work with. They really get to know your company and put that into their work. The final product was done very well and in a very timely manner. Great work done by all!</p>
+
+        <div class="test-author">
+
+          <strong>Karen H.</strong>
+
+          <span>Verified Client</span>
+
+        </div>
+
+      </article>
+
+      <article class="test-card reveal">
+
+        <div class="test-stars" aria-label="5 stars">★★★★★</div>
+
+        <p class="test-text">Blu Ocean handled our marketing of an advertisement for our business at a level that exceeded our expectations. They made it easy.</p>
+
+        <div class="test-author">
+
+          <strong>Jodie Taylor</strong>
+
+          <span>Taylor Miller Law Group</span>
+
+        </div>
+
+      </article>
+
+      <article class="test-card reveal">
+
+        <div class="test-stars" aria-label="5 stars">★★★★★</div>
+
+        <p class="test-text">Nathan and the Blu Ocean Rising team were highly professional at all times. And more importantly, I found them trustworthy. Everything was executed as they said it would be. There were only pleasant surprises.</p>
+
+        <div class="test-author">
+
+          <strong>Marina S.</strong>
+
+          <span>Verified Client</span>
+
+        </div>
+
+      </article>
+
+      <article class="test-card reveal">
+
+        <div class="test-stars" aria-label="5 stars">★★★★★</div>
+
+        <p class="test-text">Nathan and his team went above and beyond. Very professional and they thought through everything so I had no questions and the final project results were fantastic. I would recommend Nathan and his team for any digital marketing needs!</p>
+
+        <div class="test-author">
+
+          <strong>Greta A.</strong>
+
+          <span>Verified Client</span>
+
+        </div>
+
+      </article>
+
+      <article class="test-card reveal">
+
+        <div class="test-stars" aria-label="5 stars">★★★★★</div>
+
+        <p class="test-text">If you want attention to detail, connection, accessibility and the passion to make it right, then hook up your 5 stars with Nathan's.</p>
+
+        <div class="test-author">
+
+          <strong>Trevor H.</strong>
+
+          <span>Verified Client</span>
+
+        </div>
+
+      </article>
+
+      <article class="test-card reveal" style="grid-column:span 3;max-width:800px;margin:0 auto;">
+
+        <div class="test-stars" aria-label="5 stars">★★★★★</div>
+
+        <p class="test-text">It was a real pleasure dealing with these guys. Fast, efficient, professional and very courteous. The end result exceeded my expectations. If only more businesses were like that… Highly recommended!</p>
+
+        <div class="test-author">
+
+          <strong>Jacek J.</strong>
+
+          <span>Verified Client</span>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ====== FAQ ====== -->
+
+<section id="faq" aria-labelledby="faq-heading">
+
+  <div class="faq-container">
+
+    <div class="faq-header reveal">
+
+      <div class="label-tag">Common Questions</div>
+
+      <h2 id="faq-heading" class="h-section">Frequently Asked</h2>
+
+    </div>
+
+    <div class="reveal">
+
+      <div class="faq-item">
+
+        <button class="faq-q" aria-expanded="false">How quickly will I see results?<span class="faq-plus">+</span></button>
+
+        <div class="faq-a"><p>Most clients achieve full AI citation presence across major platforms within 60–90 days of activation. The Sea Turtle tier provides immediate visibility insights, while Shark and Whale tiers include active execution for faster results.</p></div>
+
+      </div>
+
+      <div class="faq-item">
+
+        <button class="faq-q" aria-expanded="false">What makes this different from traditional SEO?<span class="faq-plus">+</span></button>
+
+        <div class="faq-a"><p>Traditional SEO optimizes for Google's link-based algorithm. Our system optimizes for how AI models like ChatGPT, Gemini, and Grok select and cite sources. These are fundamentally different systems requiring different strategies — entity building, structured authority signals, and citation-optimized content.</p></div>
+
+      </div>
+
+      <div class="faq-item">
+
+        <button class="faq-q" aria-expanded="false">Do I need to create content myself?<span class="faq-plus">+</span></button>
+
+        <div class="faq-a"><p>Only on the Sea Turtle tier, which provides a self-guided fix plan. Dolphin tier and above are fully done-for-you — we handle all content creation, optimization, and distribution.</p></div>
+
+      </div>
+
+      <div class="faq-item">
+
+        <button class="faq-q" aria-expanded="false">What AI platforms do you cover?<span class="faq-plus">+</span></button>
+
+        <div class="faq-a"><p>We build visibility across ChatGPT (OpenAI), Google Gemini, Google AI Overviews, Grok (xAI), Perplexity, and all major AI-assisted search and discovery platforms — plus emerging ones as they launch.</p></div>
+
+      </div>
+
+      <div class="faq-item">
+
+        <button class="faq-q" aria-expanded="false">How does this replace my current marketing stack?<span class="faq-plus">+</span></button>
+
+        <div class="faq-a"><p>Most businesses pay $13,000–$42,000/month across separate SEO agencies, social media managers, content writers, PR firms, reputation tools, and GMB services. Our unified system runs all 8 engines in concert from a single platform, eliminating vendor fragmentation while adding AI-native strategy no traditional stack includes.</p></div>
+
+      </div>
+
+      <div class="faq-item">
+
+        <button class="faq-q" aria-expanded="false">Can I upgrade my tier later?<span class="faq-plus">+</span></button>
+
+        <div class="faq-a"><p>Absolutely. Your citation history and authority signals carry forward. Many clients start with Dolphin or Shark and upgrade to Whale as they see compounding results.</p></div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ====== CTA ====== -->
+
+<section id="cta" aria-label="Call to action">
+
+  <div class="cta-container reveal">
+
+    <div class="label-tag" style="justify-content:center;">Ready to Own Your Market?</div>
+
+    <h2 class="h-section">Let's Map Your Path to Authority</h2>
+
+    <p>15 minutes to map your visibility gaps, AI citation footprint, and fastest path to becoming the AI-recommended choice in your market. Leave with total clarity — whether you work with us or not.</p>
+
+    <div class="cta-actions">
+
+      <a href="https://calendly.com/d/csyg-g3t-f6g" class="btn-primary" target="_blank" rel="noopener">Book Discovery Call →</a>
+
+      <a href="https://mybizreport.com/ai-audit/aeo" class="btn-secondary" target="_blank" rel="noopener">Get Your AI Score First</a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<!-- ====== FOOTER ====== -->
+
+<footer role="contentinfo">
+
+  <div class="footer-inner">
+
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+
+        <img src="BOI-Logo.png" alt="Blu Ocean Innovations" />
+
+        <p>We control what the internet and AI say about your business. Permanent authority infrastructure for the AI era.</p>
+
+        <div class="social-links" aria-label="Social media">
+
+          <a href="https://facebook.com/BluOceanRising" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+
+          </a>
+
+          <a href="https://twitter.com/bluoceanrising" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="X/Twitter">
+
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+
+          </a>
+
+          <a href="https://linkedin.com/company/bluoceaninnovations" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+
+          </a>
+
+          <a href="https://instagram.com/bluoceanrising" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+
+          </a>
+
+          <a href="https://pinterest.com/bluoceaninnovations" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+
+          </a>
+
+          <a href="https://bluocean.blog/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Blog">
+
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v2.5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4z"/><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 14h8M8 17h5"/></svg>
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="footer-col">
+
+        <h4>Packages</h4>
+
+        <ul>
+
+          <li><a href="#packages">Sea Turtle</a></li>
+
+          <li><a href="#packages">Dolphin</a></li>
+
+          <li><a href="#packages">Shark</a></li>
+
+          <li><a href="#packages">Whale</a></li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer-col">
+
+        <h4>Company</h4>
+
+        <ul>
+
+          <li><a href="#tide">Tide Strategy</a></li>
+
+          <li><a href="#engines">8 Engines</a></li>
+
+          <li><a href="#who-we-serve">Who We Serve</a></li>
+
+          <li><a href="https://bluocean.blog/" target="_blank" rel="noopener">Blog</a></li>
+
+          <li><a href="https://calendly.com/d/csyg-g3t-f6g" target="_blank" rel="noopener">Book a Call</a></li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer-col">
+
+        <h4>Legal</h4>
+
+        <ul>
+
+          <li><a href="https://www.termsfeed.com/live/b13f38ac-6376-4fa3-bec1-095e30c36807" target="_blank" rel="noopener">Privacy Policy</a></li>
+
+          <li><a href="https://www.termsfeed.com/live/561d8369-4f33-4cc1-b4aa-0a8fe198e813" target="_blank" rel="noopener">Terms of Service</a></li>
+
+          <li><a href="#" onclick="openCookiePolicy(); return false;">Cookie Policy</a></li>
+
+          <li><a href="https://mybizreport.com/ai-audit/aeo" target="_blank" rel="noopener">AI Audit</a></li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <p>© <span id="year"></span> Blu Ocean Innovations LLC. All rights reserved.</p>
+
+      <p style="color:var(--text-dim);">AI-First · Authority-Driven · Results-Proven</p>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- ====== FLOATING ADA ACCESSIBILITY WIDGET ====== -->
+
+<div id="ada-widget" aria-label="Accessibility options">
+
+  <div class="ada-panel" id="ada-panel" role="dialog" aria-label="Accessibility Menu">
+
+    <h4>Accessibility</h4>
+
+    <div class="ada-opt">
+
+      <span>Text Size</span>
+
+      <div class="ada-btn-group">
+
+        <button class="ada-btn" onclick="setTextSize('normal')" aria-label="Normal text">A</button>
+
+        <button class="ada-btn" onclick="setTextSize('large')" aria-label="Large text">A+</button>
+
+        <button class="ada-btn" onclick="setTextSize('xlarge')" aria-label="Extra large text">A++</button>
+
+      </div>
+
+    </div>
+
+    <div class="ada-opt">
+
+      <span>High Contrast</span>
+
+      <button class="ada-btn" id="toggle-contrast" onclick="toggleClass('ada-high-contrast', 'toggle-contrast')" aria-label="Toggle high contrast">◐</button>
+
+    </div>
+
+    <div class="ada-opt">
+
+      <span>Grayscale</span>
+
+      <button class="ada-btn" id="toggle-gray" onclick="toggleClass('ada-grayscale', 'toggle-gray')" aria-label="Toggle grayscale">◑</button>
+
+    </div>
+
+    <div class="ada-opt">
+
+      <span>Underline Links</span>
+
+      <button class="ada-btn" id="toggle-links" onclick="toggleClass('ada-links-underline', 'toggle-links')" aria-label="Toggle link underline">U</button>
+
+    </div>
+
+    <div class="ada-opt">
+
+      <span>Readable Font</span>
+
+      <button class="ada-btn" id="toggle-readable" onclick="toggleClass('ada-readable', 'toggle-readable')" aria-label="Toggle readable font">Aa</button>
+
+    </div>
+
+    <button class="ada-reset" onclick="resetAccessibility()">Reset All</button>
+
+  </div>
+
+  <button class="ada-trigger" id="ada-trigger" aria-label="Open accessibility menu" aria-expanded="false">
+
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+      <circle cx="12" cy="4" r="2"/>
+
+      <path d="M19 13v-2a7 7 0 0 0-14 0v2"/>
+
+      <path d="M12 12v10M8 16l4-4 4 4"/>
+
+    </svg>
+
+  </button>
+
+</div>
+
+<!-- ====== COOKIE BANNER ====== -->
+
+<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+
+  <p>We use cookies to enhance your experience and analyze site traffic. By continuing, you agree to our cookie policy.</p>
+
+  <div class="cookie-actions">
+
+    <button class="btn-cookie-decline" onclick="dismissCookieBanner(false)">Decline</button>
+
+    <button class="btn-cookie-accept" onclick="dismissCookieBanner(true)">Accept All</button>
+
+  </div>
+
+</div>
+
+<script>
+
+  // ===== Nav scroll state =====
+
+  const nav = document.getElementById('nav');
+
+  window.addEventListener('scroll', () => {
+
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+
+  });
+
+  // ===== Mobile nav toggle =====
+
+  const hamburger = document.getElementById('hamburger');
+
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+
+    const isOpen = navLinks.classList.toggle('open');
+
+    hamburger.setAttribute('aria-expanded', isOpen);
+
+  });
+
+  navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+
+    navLinks.classList.remove('open');
+
+    hamburger.setAttribute('aria-expanded', 'false');
+
+  }));
+
+  // ===== FAQ accordion =====
+
+  document.querySelectorAll('.faq-q').forEach(btn => {
+
+    btn.addEventListener('click', () => {
+
+      const item = btn.closest('.faq-item');
+
+      const isOpen = item.classList.contains('open');
+
+      document.querySelectorAll('.faq-item.open').forEach(i => {
+
+        i.classList.remove('open');
+
+        i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+
+      });
+
+      if (!isOpen) {
+
+        item.classList.add('open');
+
+        btn.setAttribute('aria-expanded', 'true');
+
+      }
+
+    });
+
+  });
+
+  // ===== Smooth scroll =====
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+
+    a.addEventListener('click', e => {
+
+      const href = a.getAttribute('href');
+
+      if (href === '#' || href.length <= 1) return;
+
+      const target = document.querySelector(href);
+
+      if (target) {
+
+        e.preventDefault();
+
+        const top = target.getBoundingClientRect().top + window.scrollY - 80;
+
+        window.scrollTo({ top, behavior: 'smooth' });
+
+      }
+
+    });
+
+  });
+
+  // ===== Reveal on scroll =====
+
+  const revealObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+
+        entry.target.classList.add('visible');
+
+        revealObserver.unobserve(entry.target);
+
+      }
+
+    });
+
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // ===== Year =====
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ===== Cookie banner =====
+
+  function dismissCookieBanner(accepted) {
+
+    document.getElementById('cookie-banner').style.display = 'none';
+
+    try { localStorage.setItem('cookieConsent', accepted ? 'accepted' : 'declined'); } catch(e){}
+
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+
+    try {
+
+      if (localStorage.getItem('cookieConsent')) {
+
+        document.getElementById('cookie-banner').style.display = 'none';
+
+      }
+
+    } catch(e){}
+
+  });
+
+  // ===== Cookie Policy =====
+
+  function openCookiePolicy() {
+
+    alert('Cookie Policy\n\nBlu Ocean Innovations LLC uses cookies to enhance your browsing experience, analyze site traffic, and personalize content.\n\nTypes of cookies we use:\n• Essential cookies (required for site function)\n• Analytics cookies (Google Analytics)\n• Functionality cookies (remember preferences)\n• Marketing cookies (relevant advertising)\n\nYou can control cookies through your browser settings. For questions: privacy@bluoceaninnovations.ai');
+
+  }
+
+  // ===== ADA Accessibility Widget =====
+
+  const adaTrigger = document.getElementById('ada-trigger');
+
+  const adaPanel = document.getElementById('ada-panel');
+
+  adaTrigger.addEventListener('click', () => {
+
+    const isOpen = adaPanel.classList.toggle('open');
+
+    adaTrigger.setAttribute('aria-expanded', isOpen);
+
+  });
+
+  document.addEventListener('click', (e) => {
+
+    if (!document.getElementById('ada-widget').contains(e.target)) {
+
+      adaPanel.classList.remove('open');
+
+      adaTrigger.setAttribute('aria-expanded', 'false');
+
+    }
+
+  });
+
+  function setTextSize(size) {
+
+    document.body.classList.remove('ada-large-text','ada-xlarge-text');
+
+    document.querySelectorAll('.ada-opt .ada-btn').forEach(b=>{
+
+      if (['A','A+','A++'].includes(b.textContent)) b.classList.remove('active');
+
+    });
+
+    if (size === 'large') {
+
+      document.body.classList.add('ada-large-text');
+
+      document.querySelectorAll('.ada-btn').forEach(b=>{ if(b.textContent==='A+') b.classList.add('active'); });
+
+    } else if (size === 'xlarge') {
+
+      document.body.classList.add('ada-xlarge-text');
+
+      document.querySelectorAll('.ada-btn').forEach(b=>{ if(b.textContent==='A++') b.classList.add('active'); });
+
+    } else {
+
+      document.querySelectorAll('.ada-btn').forEach(b=>{ if(b.textContent==='A') b.classList.add('active'); });
+
+    }
+
+    try { localStorage.setItem('ada-text-size', size); } catch(e){}
+
+  }
+
+  function toggleClass(className, btnId) {
+
+    const active = document.body.classList.toggle(className);
+
+    const btn = document.getElementById(btnId);
+
+    if (btn) btn.classList.toggle('active', active);
+
+    try { localStorage.setItem(className, active ? '1' : '0'); } catch(e){}
+
+  }
+
+  function resetAccessibility() {
+
+    document.body.classList.remove('ada-large-text','ada-xlarge-text','ada-high-contrast','ada-grayscale','ada-links-underline','ada-readable');
+
+    document.querySelectorAll('.ada-btn').forEach(b=>b.classList.remove('active'));
+
+    try {
+
+      ['ada-text-size','ada-high-contrast','ada-grayscale','ada-links-underline','ada-readable'].forEach(k=>localStorage.removeItem(k));
+
+    } catch(e){}
+
+  }
+
+  // Restore saved accessibility prefs
+
+  window.addEventListener('DOMContentLoaded', () => {
+
+    try {
+
+      const size = localStorage.getItem('ada-text-size');
+
+      if (size) setTextSize(size);
+
+      ['ada-high-contrast','ada-grayscale','ada-links-underline','ada-readable'].forEach(c => {
+
+        if (localStorage.getItem(c) === '1') document.body.classList.add(c);
+
+      });
+
+    } catch(e){}
+
+  });
+
+</script>
+
+</body>
+
 </html>
