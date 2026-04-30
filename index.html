@@ -2238,45 +2238,57 @@
     // ---- Counter animations on hero stats -------------------
     function setupCounters() {
       const stats = document.querySelectorAll('.hero-stat');
-      console.log('[counter] hero-stats found:', stats.length);
       if (!stats.length) return;
-      if (reduce) { console.log('[counter] reduced motion on, skipping'); return; }
 
-      stats.forEach((stat, idx) => {
-        const numEl = stat.querySelector('.num');
-        if (!numEl) { console.log('[counter] no .num inside stat', idx); return; }
-
-        const finalText = numEl.textContent.trim();
-        // Match leading digits, capture everything after as suffix (handles -, +, *, en-dash, anything)
-        const match = finalText.match(/^(\d+)/);
-        if (!match) { console.log('[counter] no leading digits in', JSON.stringify(finalText)); return; }
-
-        const target = parseInt(match[1], 10);
-        const suffix = finalText.substring(match[0].length);
-        const duration = 2200;
-
-        // Reset immediately so the user sees the count start from 0
-        numEl.textContent = '0' + suffix;
-        console.log('[counter]', idx, 'target=' + target, 'suffix=' + JSON.stringify(suffix));
-
-        // Stagger each stat so they cascade
-        const delay = 400 + idx * 130;
-        setTimeout(() => {
-          const start = performance.now();
-          function step(now) {
-            const t = Math.min(1, (now - start) / duration);
-            const eased = 1 - Math.pow(1 - t, 3);
-            numEl.textContent = Math.floor(target * eased) + suffix;
-            if (t < 1) {
-              requestAnimationFrame(step);
-            } else {
-              numEl.textContent = finalText;
-              console.log('[counter]', idx, 'done ->', finalText);
-            }
-          }
-          requestAnimationFrame(step);
-        }, delay);
+      // Cache final text and reset to "0" so the count is visible from the start
+      stats.forEach(s => {
+        const n = s.querySelector('.num');
+        if (!n) return;
+        s.dataset.finalNum = n.textContent.trim();
+        if (!reduce) n.textContent = '0';
       });
+
+      const animate = (el) => {
+        if (el.classList.contains('counted')) return;
+        const numEl = el.querySelector('.num');
+        if (!numEl) return;
+        const finalText = el.dataset.finalNum || numEl.textContent.trim();
+        const match = finalText.match(/^(\d+)([^\d].*)?$/);
+        if (!match || reduce) {
+          numEl.textContent = finalText;
+          el.classList.add('counted');
+          return;
+        }
+        const target = parseInt(match[1], 10);
+        const suffix = match[2] || '';
+        const duration = 2000;
+        const start = performance.now();
+        function step(now) {
+          const t = Math.min(1, (now - start) / duration);
+          const eased = 1 - Math.pow(1 - t, 3);
+          numEl.textContent = Math.floor(target * eased) + suffix;
+          if (t < 1) requestAnimationFrame(step);
+          else numEl.textContent = finalText;
+        }
+        requestAnimationFrame(step);
+        el.classList.add('counted');
+      };
+
+      // Hero stats are typically in viewport at load. Trigger after a short delay
+      // so the user sees the count from "0" upward, then also observe in case
+      // the user lands on a long page lower than the hero.
+      const startCount = () => stats.forEach(animate);
+      setTimeout(startCount, 250);
+
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animate(entry.target);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      stats.forEach(s => obs.observe(s));
     }
 
     // ---- Subtle parallax on wave layers + caustics opacity ---
@@ -2309,4 +2321,23 @@
       update();
     }
 
-    
+    // ---- Init -------------------------------------------------
+    function init() {
+      spawnBubbleField();
+      setupCursorGlow();
+      setupMagneticButtons();
+      setup3DTilt();
+      setupCounters();
+      setupScrollDepth();
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+
+</script>
+
+</body>
+</html>
