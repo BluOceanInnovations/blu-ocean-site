@@ -15,6 +15,7 @@
 <meta name="geo.placename" content="Las Vegas">
 <meta name="geo.position" content="36.1699;-115.1398">
 <meta name="ICBM" content="36.1699, -115.1398">
+<meta name="google-site-verification" content="CmM0_F3JTelcA_ka3MNCKfG0yPS2ZmQT63MAQ-T0jS4" />
 
 <!-- Canonical -->
 <link rel="canonical" href="https://bluoceaninnovations.ai/">
@@ -417,7 +418,9 @@
   .ocean-bg::before {
     content: '';
     position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 30% 20%, #0a1628 0%, #050d1a 40%, #020810 100%);
+    /* Subtle radial highlight at the surface; transparent overall so body gradient shows */
+    background: radial-gradient(ellipse at 30% 0%, rgba(180, 230, 255, 0.08) 0%, transparent 60%);
+    pointer-events: none;
   }
   .wave-layer {
     position: absolute; left: -10%; width: 120%;
@@ -1143,7 +1146,7 @@
     top: 0; left: 0; right: 0;
     height: 110vh;
     pointer-events: none;
-    z-index: 1;
+    z-index: 3;
     overflow: hidden;
     mask-image: linear-gradient(180deg, #000 0%, #000 50%, transparent 95%);
     -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 50%, transparent 95%);
@@ -1188,21 +1191,21 @@
     border-radius: 50%;
     background:
       radial-gradient(circle at 30% 30%,
-        rgba(230, 245, 255, 0.95) 0%,
-        rgba(170, 215, 240, 0.55) 40%,
-        rgba(110, 170, 210, 0.18) 75%,
+        rgba(230, 245, 255, 0.55) 0%,
+        rgba(170, 215, 240, 0.30) 40%,
+        rgba(110, 170, 210, 0.10) 75%,
         transparent 100%);
     box-shadow:
-      inset 0 0 2px rgba(255, 255, 255, 0.7),
-      0 0 6px rgba(140, 200, 230, 0.25);
+      inset 0 0 2px rgba(255, 255, 255, 0.45),
+      0 0 4px rgba(140, 200, 230, 0.15);
     animation: bubbleStream linear infinite;
     will-change: transform, opacity;
   }
   @keyframes bubbleStream {
     0%   { transform: translate3d(0, 0, 0) scale(0.7);   opacity: 0; }
-    8%   { opacity: 0.9; }
+    8%   { opacity: 0.55; }
     50%  { transform: translate3d(10px, -55vh, 0) scale(1); }
-    92%  { opacity: 0.4; }
+    92%  { opacity: 0.25; }
     100% { transform: translate3d(-8px, -120vh, 0) scale(1.15); opacity: 0; }
   }
 
@@ -1211,17 +1214,17 @@
     bottom: -8px;
     width: 2px; height: 2px;
     border-radius: 50%;
-    background: rgba(170, 235, 255, 0.7);
-    box-shadow: 0 0 6px 1px rgba(150, 220, 255, 0.5);
+    background: rgba(170, 235, 255, 0.42);
+    box-shadow: 0 0 5px 1px rgba(150, 220, 255, 0.30);
     animation: planktonDrift linear infinite;
     will-change: transform, opacity;
   }
   @keyframes planktonDrift {
     0%   { transform: translate3d(0, 0, 0); opacity: 0; }
-    15%  { opacity: 0.8; }
+    15%  { opacity: 0.50; }
     35%  { transform: translate3d(18px, -35vh, 0); }
     65%  { transform: translate3d(-14px, -70vh, 0); }
-    85%  { opacity: 0.45; }
+    85%  { opacity: 0.28; }
     100% { transform: translate3d(8px, -115vh, 0); opacity: 0; }
   }
 
@@ -1298,9 +1301,8 @@
      ============================================================ */
   .hero-stat .num {
     display: inline-block;
-    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   }
-  .hero-stat:not(.counted) .num { opacity: 0; transform: translateY(10px); }
 
   /* ============================================================
      REDUCED MOTION SAFEGUARDS
@@ -2112,8 +2114,8 @@
       const stream = document.getElementById('bubble-stream');
       if (!stream) return;
 
-      const bubbleCount = window.innerWidth < 700 ? 14 : 28;
-      const planktonCount = window.innerWidth < 700 ? 18 : 36;
+      const bubbleCount = window.innerWidth < 700 ? 8 : 17;
+      const planktonCount = window.innerWidth < 700 ? 11 : 22;
 
       for (let i = 0; i < bubbleCount; i++) {
         const b = document.createElement('div');
@@ -2236,43 +2238,45 @@
     // ---- Counter animations on hero stats -------------------
     function setupCounters() {
       const stats = document.querySelectorAll('.hero-stat');
+      console.log('[counter] hero-stats found:', stats.length);
       if (!stats.length) return;
+      if (reduce) { console.log('[counter] reduced motion on, skipping'); return; }
 
-      const animate = (el) => {
-        if (el.classList.contains('counted')) return;
-        const numEl = el.querySelector('.num');
-        if (!numEl) return;
+      stats.forEach((stat, idx) => {
+        const numEl = stat.querySelector('.num');
+        if (!numEl) { console.log('[counter] no .num inside stat', idx); return; }
+
         const finalText = numEl.textContent.trim();
-        // Try to extract a leading integer; fall back to fade-in only
-        const match = finalText.match(/^(\d+)([^\d].*)?$/);
-        if (!match || reduce) {
-          el.classList.add('counted');
-          return;
-        }
-        const target = parseInt(match[1], 10);
-        const suffix = match[2] || '';
-        const duration = 1400;
-        const start = performance.now();
-        function step(now) {
-          const t = Math.min(1, (now - start) / duration);
-          const eased = 1 - Math.pow(1 - t, 3);
-          numEl.textContent = Math.floor(target * eased) + suffix;
-          if (t < 1) requestAnimationFrame(step);
-          else numEl.textContent = finalText; // restore exact original (handles leading zeros, etc.)
-        }
-        requestAnimationFrame(step);
-        el.classList.add('counted');
-      };
+        // Match leading digits, capture everything after as suffix (handles -, +, *, en-dash, anything)
+        const match = finalText.match(/^(\d+)/);
+        if (!match) { console.log('[counter] no leading digits in', JSON.stringify(finalText)); return; }
 
-      const obs = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            animate(entry.target);
-            obs.unobserve(entry.target);
+        const target = parseInt(match[1], 10);
+        const suffix = finalText.substring(match[0].length);
+        const duration = 2200;
+
+        // Reset immediately so the user sees the count start from 0
+        numEl.textContent = '0' + suffix;
+        console.log('[counter]', idx, 'target=' + target, 'suffix=' + JSON.stringify(suffix));
+
+        // Stagger each stat so they cascade
+        const delay = 400 + idx * 130;
+        setTimeout(() => {
+          const start = performance.now();
+          function step(now) {
+            const t = Math.min(1, (now - start) / duration);
+            const eased = 1 - Math.pow(1 - t, 3);
+            numEl.textContent = Math.floor(target * eased) + suffix;
+            if (t < 1) {
+              requestAnimationFrame(step);
+            } else {
+              numEl.textContent = finalText;
+              console.log('[counter]', idx, 'done ->', finalText);
+            }
           }
-        });
-      }, { threshold: 0.4 });
-      stats.forEach(s => obs.observe(s));
+          requestAnimationFrame(step);
+        }, delay);
+      });
     }
 
     // ---- Subtle parallax on wave layers + caustics opacity ---
@@ -2305,23 +2309,4 @@
       update();
     }
 
-    // ---- Init -------------------------------------------------
-    function init() {
-      spawnBubbleField();
-      setupCursorGlow();
-      setupMagneticButtons();
-      setup3DTilt();
-      setupCounters();
-      setupScrollDepth();
-    }
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', init);
-    } else {
-      init();
-    }
-  })();
-
-</script>
-
-</body>
-</html>
+    
