@@ -10,7 +10,7 @@
 - **Service area:** Las Vegas, Henderson, North Las Vegas, Paradise, and clients nationwide across the US
 - **Phone:** +1 (702) 727-6211
 - **Email:** info@bluoceanrising.com
-- **Website:** https://bluoceaninnovations.ai
+- **Website:** https://www.bluoceaninnovations.ai
 - **Hours:** Monday–Friday, 9:00 AM – 5:00 PM Pacific
 - **Slogan:** Own the AI Conversation
 - **Founded by:** Shaun Lowe (CEO)
@@ -30,12 +30,12 @@ This sits across an 8-engine system: AI search, citations, content, reviews, soc
 
 We offer four tiers, all month-to-month:
 
-| Tier | Setup | Monthly | Best for |
+| Tier | Level | Monthly | Best for |
 |------|-------|---------|----------|
-| **Sea Turtle** — Entry Visibility (Self-Guided) | $297 | $97 | Businesses who want monthly AI visibility insights and a do-it-yourself fix guide. |
-| **Dolphin** — Citation Authority (Done-For-You) | $1,497 | $497 | Businesses that want active citation campaigns and a 90-day measurable visibility goal. |
-| **Shark** — Strategy & Execution (Best Value) | $2,997 | $997 | Businesses that want a complete AI roadmap with full implementation across every major AI platform. |
-| **Whale** — Complete Domination (White-Glove) | $4,997 | $2,997 | Businesses that want priority white-glove execution and to become THE AI-recommended choice in their market. |
+| **Sea Turtle** — Foundation | Tier 1 | $997 | Establishing your AI authority foundation with assessments and guidance. |
+| **Dolphin** — Authority | Tier 2 | $1,997 | Done-for-you citation campaigns, entity and schema implementation. |
+| **Shark** — Market Leader (Best Value) | Tier 3 | $3,497 | Competing in valuable or crowded markets with priority execution. |
+| **Whale** — Category Leader (White-Glove) | Tier 4 | From $4,997 | Multi-location strategy, executive authority, white-glove service. |
 
 ## Topics we are an authority on
 
@@ -81,16 +81,15 @@ Yes. Citation history and authority signals carry forward when you upgrade.
 
 ## Pages
 
-- Home: https://bluoceaninnovations.ai/
-- Tide Strategy: https://bluoceaninnovations.ai/#tide
-- Packages & pricing: https://bluoceaninnovations.ai/#packages
-- 8 Engines: https://bluoceaninnovations.ai/#engines
-- Who We Serve: https://bluoceaninnovations.ai/#who-we-serve
-- What is AEO: https://bluoceaninnovations.ai/#aeo
-- Testimonials: https://bluoceaninnovations.ai/#testimonials
-- FAQ: https://bluoceaninnovations.ai/#faq
+- Home: https://www.bluoceaninnovations.ai/
+- Tide Strategy: https://www.bluoceaninnovations.ai/#tide-summary
+- Packages & pricing: https://www.bluoceaninnovations.ai/#pricing
+- Who We Serve: https://www.bluoceaninnovations.ai/#fit
+- One Client Per Niche: https://www.bluoceaninnovations.ai/#exclusive
+- Testimonials: https://www.bluoceaninnovations.ai/#proof
+- FAQ: https://www.bluoceaninnovations.ai/#faq
 - Privacy Policy: https://www.termsfeed.com/live/b13f38ac-6376-4fa3-bec1-095e30c36807
 - Terms of Service: https://www.termsfeed.com/live/561d8369-4f33-4cc1-b4aa-0a8fe198e813
 
 ---
-Last updated: 2026-04-30
+Last updated: 2026-09-08
