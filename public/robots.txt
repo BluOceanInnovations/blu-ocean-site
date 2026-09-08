@@ -1,4 +1,4 @@
-# robots.txt for bluoceaninnovations.ai
+# robots.txt for www.bluoceaninnovations.ai
 # Allow all standard and AI crawlers — this site WANTS to be discovered by AI.
 
 User-agent: *
@@ -89,4 +89,4 @@ User-agent: YouBot
 Allow: /
 
 # ---- Sitemaps ----
-Sitemap: https://bluoceaninnovations.ai/sitemap.xml
+Sitemap: https://www.bluoceaninnovations.ai/sitemap.xml
