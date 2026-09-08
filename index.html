@@ -692,6 +692,28 @@
     color: #fff; font-size: 9px; font-weight: 800; letter-spacing: 1.5px;
     border-radius: 100px; vertical-align: middle;
   }
+  table.pricing td.tier-name .tier-id { display: inline-flex; align-items: center; gap: 14px; vertical-align: middle; }
+  .tier-img {
+    width: 52px; height: 52px; flex: 0 0 52px;
+    border-radius: 50%; object-fit: cover; display: block;
+    border: 1px solid var(--border-hover);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+    background: rgba(10,22,40,0.6);
+  }
+  /* ====== Tide visual ====== */
+  .tide-visual {
+    position: relative; margin: 0 0 40px;
+    border-radius: 20px; overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .tide-visual img {
+    width: 100%; height: clamp(220px, 30vw, 360px);
+    object-fit: cover; object-position: center 45%; display: block;
+  }
+  .tide-visual::after {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(180deg, rgba(2,8,16,0) 45%, rgba(2,8,16,0.7) 100%);
+  }
   .pricing-note { margin-top: 20px; font-size: 14px; color: var(--text-dim); }
   .pricing-note a { color: var(--accent); text-decoration: none; }
   .pricing-note a:hover { color: var(--accent-bright); }
@@ -764,7 +786,7 @@
   footer { position: relative; z-index: 1; border-top: 1px solid var(--border); background: var(--bg-0); }
   .footer-inner { max-width: 1280px; margin: 0 auto; padding: 72px 24px 40px; }
   .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 56px; }
-  .footer-brand img { height: 48px; margin-bottom: 20px; }
+  .footer-brand img { height: 48px; width: auto; display: block; margin-bottom: 20px; }
   .footer-brand p { font-size: 14px; line-height: 1.7; color: var(--text-dim); max-width: 320px; margin-bottom: 28px; }
   .social-links { display: flex; gap: 10px; flex-wrap: wrap; }
   .social-link {
@@ -830,6 +852,8 @@
     .hero-heading { font-size: clamp(34px, 9vw, 52px); }
     .answer-card { padding: 32px 24px; }
     .tide-grid { grid-template-columns: 1fr; }
+    .tier-img { width: 40px; height: 40px; flex: 0 0 40px; }
+    table.pricing td.tier-name .tier-id { gap: 10px; }
     .fit-grid { grid-template-columns: 1fr; }
     .test-grid { grid-template-columns: 1fr; }
     .footer-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -879,7 +903,7 @@
 <nav id="nav" role="navigation" aria-label="Main">
   <div class="nav-inner">
     <a href="/" class="nav-logo" aria-label="Blu Ocean Innovations — Home">
-      <img src="https://cdn.durable.co/logos/8KqLfUr5JUZKAlbwbElOYyfBtmBz1UO5E5s4ur3pBaBmoBTiCKuQLKjY8bpUXNae.png" alt="Blu Ocean Innovations" />
+      <img src="/BOI-Logo.png" alt="Blu Ocean Innovations" width="1920" height="759" />
     </a>
     <ul class="nav-links" id="nav-links" role="menubar">
       <li role="none"><a href="/#tide" role="menuitem">Strategy</a></li>
@@ -1040,6 +1064,9 @@
       <h2 id="tide-sum-heading" class="h-section">SEO Ranks Pages. AEO Gets You Named In The Answer.</h2>
       <p>Traditional SEO optimizes for Google's blue links. AEO (Answer Engine Optimization) gets your business named inside the AI answer itself. We run both through one system: <strong style="color:var(--text-bright);">the Tide Strategy.</strong></p>
     </div>
+    <figure class="tide-visual reveal">
+      <img src="/TideStrategy.jpg" alt="Ocean wave cresting at sunset - the Tide Strategy in motion" width="900" height="1200" loading="lazy" decoding="async" />
+    </figure>
     <div class="tide-grid">
       <div class="tide-step reveal">
         <div class="tide-num">01</div>
@@ -1118,25 +1145,25 @@
         </thead>
         <tbody>
           <tr>
-            <td class="tier-name">Sea Turtle</td>
+            <td class="tier-name"><span class="tier-id"><img class="tier-img" src="/SeaTurtle.jpg" alt="Sea turtle gliding underwater - steady, foundational AI visibility" width="900" height="1200" loading="lazy" decoding="async" style="object-position:center 40%;" /><span>Sea Turtle</span></span></td>
             <td>Foundation · Tier 1</td>
             <td class="price">$997 / month</td>
             <td>Establishing your AI authority foundation with assessments and guidance</td>
           </tr>
           <tr>
-            <td class="tier-name">Dolphin</td>
+            <td class="tier-name"><span class="tier-id"><img class="tier-img" src="/Dolphin.jpg" alt="Dolphin leaping at sunset - agile, intelligent AI authority building" width="900" height="1200" loading="lazy" decoding="async" style="object-position:center 30%;" /><span>Dolphin</span></span></td>
             <td>Authority · Tier 2</td>
             <td class="price">$1,997 / month</td>
             <td>Done-for-you citation campaigns, entity and schema implementation</td>
           </tr>
           <tr class="best">
-            <td class="tier-name">Shark</td>
+            <td class="tier-name"><span class="tier-id"><img class="tier-img" src="/Shark.jpg" alt="Great white shark in clear blue water - dominant AI market authority" width="900" height="1200" loading="lazy" decoding="async" style="object-position:center 32%;" /><span>Shark</span></span></td>
             <td>Market Leader · Tier 3</td>
             <td class="price">$3,497 / month</td>
             <td>Competing in valuable or crowded markets with priority execution</td>
           </tr>
           <tr>
-            <td class="tier-name">Whale</td>
+            <td class="tier-name"><span class="tier-id"><img class="tier-img" src="/Whale.jpg" alt="Humpback whale breaching - total AI presence and category leadership" width="900" height="1200" loading="lazy" decoding="async" style="object-position:center 35%;" /><span>Whale</span></span></td>
             <td>Category Leader · Tier 4</td>
             <td class="price">From $4,997 / month</td>
             <td>Multi-location strategy, executive authority, white-glove service</td>
@@ -1250,7 +1277,7 @@
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="https://cdn.durable.co/logos/8KqLfUr5JUZKAlbwbElOYyfBtmBz1UO5E5s4ur3pBaBmoBTiCKuQLKjY8bpUXNae.png" alt="Blu Ocean Innovations" />
+        <img src="/BOI-Logo.png" alt="Blu Ocean Innovations" width="1920" height="759" />
         <p>We control what the internet and AI say about your business. Permanent authority infrastructure for the AI era.</p>
         <div class="social-links" aria-label="Social media">
           <a href="https://facebook.com/BluOceanRising" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
