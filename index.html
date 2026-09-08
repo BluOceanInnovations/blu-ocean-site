@@ -641,6 +641,83 @@
   }
   .tide-step p { font-size: 14px; line-height: 1.7; color: var(--text-muted); }
   .tide-more { margin-top: 36px; }
+  .tide-visual {
+    position: relative; margin: 0 0 40px;
+    border-radius: 20px; overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .tide-visual img {
+    width: 100%; height: clamp(220px, 30vw, 360px);
+    object-fit: cover; object-position: center 45%; display: block;
+  }
+  .tide-visual::after {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(rgba(2,8,16,0) 45%, rgba(2,8,16,0.7) 100%);
+  }
+  .tier-img {
+    width: 52px; height: 52px; flex: 0 0 52px;
+    border-radius: 50%; object-fit: cover; display: block;
+    border: 1px solid var(--border-hover);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+    background: rgba(10,22,40,0.6);
+  }
+  table.pricing td.tier-name .tier-id {
+    display: inline-flex; align-items: center; gap: 14px; vertical-align: middle;
+  }
+  /* ====== 8 Engines ====== */
+  #engines {
+    padding: 110px 0;
+    background: linear-gradient(180deg, transparent, rgba(10,22,40,0.3));
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .engines-header { max-width: 800px; margin-bottom: 56px; }
+  .engines-header h2 { font-size: clamp(36px, 4.5vw, 56px); margin-bottom: 16px; }
+  .engines-header p { font-size: 17px; color: var(--text-muted); line-height: 1.6; }
+  .engines-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .engine-card {
+    padding: 32px 24px;
+    background: rgba(10,22,40,0.5);
+    border: 1px solid var(--border); border-radius: 16px;
+    transition: all 0.3s ease;
+  }
+  .engine-card:hover { background: rgba(15,30,55,0.7); border-color: var(--border-hover); transform: translateY(-3px); }
+  .engine-icon {
+    width: 48px; height: 48px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, rgba(52,152,219,0.15), rgba(26,188,156,0.08));
+    color: var(--accent); margin-bottom: 20px;
+    font-size: 22px;
+  }
+  .engine-card h4 {
+    font-family: var(--font-display); font-weight: 600; font-size: 17px;
+    color: var(--text-bright); margin-bottom: 8px;
+  }
+  .engine-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+  /* ====== AEO Explainer ====== */
+  #aeo {
+    padding: 110px 0;
+    background: linear-gradient(160deg, rgba(10,22,40,0.55) 0%, rgba(5,13,26,0.55) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+  .aeo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .aeo-text h2 { font-size: clamp(36px, 4.5vw, 54px); margin-bottom: 24px; }
+  .aeo-text p { font-size: 16px; line-height: 1.8; color: var(--text-muted); margin-bottom: 20px; }
+  .aeo-text p strong { color: var(--text-bright); }
+  .aeo-text p em { color: var(--accent); font-style: normal; font-weight: 600; }
+  .aeo-comparison { display: flex; flex-direction: column; gap: 14px; }
+  .aeo-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .aeo-col {
+    padding: 20px; border-radius: 12px;
+    background: rgba(10,22,40,0.5); border: 1px solid var(--border);
+  }
+  .aeo-col.highlight { border-color: var(--accent); background: rgba(52,152,219,0.05); }
+  .aeo-col-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; margin-bottom: 10px; color: var(--text-muted);
+  }
+  .aeo-col.highlight .aeo-col-label { color: var(--accent); }
+  .aeo-col p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
   /* ====== Proof ====== */
   #proof {
     padding: 110px 0;
@@ -700,28 +777,6 @@
     padding: 4px 10px; background: linear-gradient(135deg, var(--accent), var(--teal));
     color: #fff; font-size: 9px; font-weight: 800; letter-spacing: 1.5px;
     border-radius: 100px; vertical-align: middle;
-  }
-  table.pricing td.tier-name .tier-id { display: inline-flex; align-items: center; gap: 14px; vertical-align: middle; }
-  .tier-img {
-    width: 52px; height: 52px; flex: 0 0 52px;
-    border-radius: 50%; object-fit: cover; display: block;
-    border: 1px solid var(--border-hover);
-    box-shadow: 0 4px 14px rgba(0,0,0,0.35);
-    background: rgba(10,22,40,0.6);
-  }
-  /* ====== Tide visual ====== */
-  .tide-visual {
-    position: relative; margin: 0 0 40px;
-    border-radius: 20px; overflow: hidden;
-    border: 1px solid var(--border);
-  }
-  .tide-visual img {
-    width: 100%; height: clamp(220px, 30vw, 360px);
-    object-fit: cover; object-position: center 45%; display: block;
-  }
-  .tide-visual::after {
-    content: ''; position: absolute; inset: 0; pointer-events: none;
-    background: linear-gradient(180deg, rgba(2,8,16,0) 45%, rgba(2,8,16,0.7) 100%);
   }
   .pricing-note { margin-top: 20px; font-size: 14px; color: var(--text-dim); }
   .pricing-note a { color: var(--accent); text-decoration: none; }
@@ -795,7 +850,7 @@
   footer { position: relative; z-index: 1; border-top: 1px solid var(--border); background: var(--bg-0); }
   .footer-inner { max-width: 1280px; margin: 0 auto; padding: 72px 24px 40px; }
   .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 56px; }
-  .footer-brand img { height: 48px; width: auto; display: block; margin-bottom: 20px; }
+  .footer-brand img { height: 48px; margin-bottom: 20px; }
   .footer-brand p { font-size: 14px; line-height: 1.7; color: var(--text-dim); max-width: 320px; margin-bottom: 28px; }
   .social-links { display: flex; gap: 10px; flex-wrap: wrap; }
   .social-link {
@@ -842,6 +897,8 @@
     .exclusive-grid, .speed-grid { grid-template-columns: 1fr; gap: 48px; }
     .test-grid { grid-template-columns: 1fr 1fr; }
     .hs-grid { grid-template-columns: 1fr 1fr; }
+    .engines-grid { grid-template-columns: repeat(2, 1fr); }
+    .aeo-grid { grid-template-columns: 1fr; gap: 48px; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
     .hero-stats { grid-template-columns: repeat(2, 1fr); }
     .answer-facts { grid-template-columns: 1fr; }
@@ -857,12 +914,13 @@
     }
     .nav-links.open { display: flex; }
     #hero { padding: 130px 0 60px; min-height: 0; }
-    #answer, #exclusive, #fit, #home-services, #tide-summary, #proof, #pricing, #speed, #team, #faq { padding: 72px 0; }
+    #answer, #exclusive, #fit, #home-services, #tide-summary, #engines, #aeo, #proof, #pricing, #speed, #team, #faq { padding: 72px 0; }
+    .engines-grid { grid-template-columns: 1fr; }
+    .tier-img { width: 40px; height: 40px; flex: 0 0 40px; }
+    table.pricing td.tier-name .tier-id { gap: 10px; }
     .hero-heading { font-size: clamp(34px, 9vw, 52px); }
     .answer-card { padding: 32px 24px; }
     .tide-grid { grid-template-columns: 1fr; }
-    .tier-img { width: 40px; height: 40px; flex: 0 0 40px; }
-    table.pricing td.tier-name .tier-id { gap: 10px; }
     .fit-grid { grid-template-columns: 1fr; }
     .test-grid { grid-template-columns: 1fr; }
     .footer-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -912,11 +970,12 @@
 <nav id="nav" role="navigation" aria-label="Main">
   <div class="nav-inner">
     <a href="/" class="nav-logo" aria-label="Blu Ocean Innovations — Home">
-      <img src="/BOI-Logo.png" alt="Blu Ocean Innovations" width="1920" height="759" />
+      <img src="/BOI-Logo.png" alt="Blu Ocean Innovations" />
     </a>
     <ul class="nav-links" id="nav-links" role="menubar">
       <li role="none"><a href="#tide-summary" role="menuitem">Strategy</a></li>
       <li role="none"><a href="#pricing" role="menuitem">Packages</a></li>
+      <li role="none"><a href="#engines" role="menuitem">Engines</a></li>
       <li role="none"><a href="#fit" role="menuitem">Who We Serve</a></li>
       <li role="none"><a href="#faq" role="menuitem">FAQ</a></li>
       <li role="none"><a href="https://calendly.com/d/csyg-g3t-f6g" class="btn-primary" target="_blank" rel="noopener" style="padding:10px 22px;">Book Discovery Call</a></li>
@@ -1072,9 +1131,9 @@
       <h2 id="tide-sum-heading" class="h-section">SEO Ranks Pages. AEO Gets You Named In The Answer.</h2>
       <p>Traditional SEO optimizes for Google's blue links. AEO (Answer Engine Optimization) gets your business named inside the AI answer itself. We run both through one system: <strong style="color:var(--text-bright);">the Tide Strategy.</strong></p>
     </div>
-    <figure class="tide-visual reveal">
-      <img src="/TideStrategy.jpg" alt="Ocean wave cresting at sunset - the Tide Strategy in motion" width="900" height="1200" loading="lazy" decoding="async" />
-    </figure>
+    <div class="tide-visual reveal">
+      <img src="/TideStrategy.jpg" alt="Ocean wave cresting at sunset - the Tide Strategy in motion" width="900" height="1200" loading="lazy" decoding="async">
+    </div>
     <div class="tide-grid">
       <div class="tide-step reveal">
         <div class="tide-num">01</div>
@@ -1094,6 +1153,102 @@
     </div>
     <div class="tide-more reveal">
       <a href="#pricing" class="btn-secondary">See Packages and Pricing →</a>
+    </div>
+  </div>
+</section>
+<!-- ====== 8 ENGINES ====== -->
+<section id="engines" aria-labelledby="engines-heading">
+  <div class="container-wide">
+    <div class="engines-header reveal">
+      <div class="label-tag">The System</div>
+      <h2 id="engines-heading" class="h-section">8 Engines. One Unified System.</h2>
+      <p>Most businesses fragment their marketing across 7+ separate vendors. We run all 8 engines in concert, from a single platform, with AI-native strategy woven through every layer.</p>
+    </div>
+    <div class="engines-grid">
+      <div class="engine-card reveal">
+        <div class="engine-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.73 21a2 2 0 01-3.46 0" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h4>Social Media Engine</h4>
+        <p>30&ndash;45 branded posts/mo across LinkedIn, Facebook, Instagram &amp; X</p>
+      </div>
+      <div class="engine-card reveal">
+        <div class="engine-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <h4>Blog &amp; Content Engine</h4>
+        <p>Long-form authority articles &amp; pillar pages built to earn AI citations</p>
+      </div>
+      <div class="engine-card reveal">
+        <div class="engine-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 10h8M8 14h5"/></svg>
+        </div>
+        <h4>Press Release Engine</h4>
+        <p>AP-style distribution across 400+ outlets with AI-pickup syndication</p>
+      </div>
+      <div class="engine-card reveal">
+        <div class="engine-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h4>GMB Engine</h4>
+        <p>Google Business Profile optimization &amp; AI-ready response frameworks</p>
+      </div>
+      <div class="engine-card reveal">
+        <div class="engine-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </div>
+        <h4>AI Authority Engine</h4>
+        <p>Entity building so ChatGPT, Grok &amp; Gemini cite you by name</p>
+      </div>
+      <div class="engine-card reveal">
+        <div class="engine-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </div>
+        <h4>SEO Engine</h4>
+        <p>Meta architecture &amp; technical SEO for traditional + AI search</p>
+      </div>
+      <div class="engine-card reveal">
+        <div class="engine-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h4>Reputation Engine</h4>
+        <p>Review automation, monitoring, mitigation &amp; sentiment recovery</p>
+      </div>
+      <div class="engine-card reveal">
+        <div class="engine-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        </div>
+        <h4>KPI Engine</h4>
+        <p>Executive narrative reports, visibility scores &amp; ROI storytelling</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ====== AEO EXPLAINER ====== -->
+<section id="aeo" aria-labelledby="aeo-heading">
+  <div class="container-wide">
+    <div class="aeo-grid">
+      <div class="aeo-text reveal">
+        <div class="label-tag">Education</div>
+        <h2 id="aeo-heading" class="h-section">What Is AEO?</h2>
+        <p>AEO stands for <strong>Answer Engine Optimization</strong>: the practice of optimizing your business to be surfaced and recommended by AI-powered tools, not just traditional search engines.</p>
+        <p>When someone asks ChatGPT <em>"Who's the best divorce attorney in Phoenix?"</em> or asks Perplexity <em>"What's a highly-rated HVAC company near me?"</em>, those are the moments AEO wins or loses.</p>
+        <p>SEO gets you ranked in blue links. AEO gets you <em>recommended by AI.</em> Both matter. But AEO is where new clients are increasingly being won.</p>
+      </div>
+      <div class="aeo-comparison reveal">
+        <div class="aeo-row">
+          <div class="aeo-col"><div class="aeo-col-label">SEO</div><p>Targets keyword rankings in Google's blue link results</p></div>
+          <div class="aeo-col highlight"><div class="aeo-col-label">AEO</div><p>Targets AI summaries, recommendation boxes &amp; assistant responses</p></div>
+        </div>
+        <div class="aeo-row">
+          <div class="aeo-col"><div class="aeo-col-label">SEO</div><p>Measured in clicks and impressions</p></div>
+          <div class="aeo-col highlight"><div class="aeo-col-label">AEO</div><p>Measured in citations, recommendations &amp; shortlist mentions</p></div>
+        </div>
+        <div class="aeo-row">
+          <div class="aeo-col"><div class="aeo-col-label">SEO</div><p>Built on keywords and backlinks</p></div>
+          <div class="aeo-col highlight"><div class="aeo-col-label">AEO</div><p>Built on E-E-A-T signals, structured data &amp; verifiable credibility</p></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1153,25 +1308,25 @@
         </thead>
         <tbody>
           <tr>
-            <td class="tier-name"><span class="tier-id"><img class="tier-img" src="/SeaTurtle.jpg" alt="Sea turtle gliding underwater - steady, foundational AI visibility" width="900" height="1200" loading="lazy" decoding="async" style="object-position:center 40%;" /><span>Sea Turtle</span></span></td>
+            <td class="tier-name"><span class="tier-id"><img class="tier-img" src="/SeaTurtle.jpg" alt="Sea turtle gliding underwater" loading="lazy"><span>Sea Turtle</span></span></td>
             <td>Foundation · Tier 1</td>
             <td class="price">$997 / month</td>
             <td>Establishing your AI authority foundation with assessments and guidance</td>
           </tr>
           <tr>
-            <td class="tier-name"><span class="tier-id"><img class="tier-img" src="/Dolphin.jpg" alt="Dolphin leaping at sunset - agile, intelligent AI authority building" width="900" height="1200" loading="lazy" decoding="async" style="object-position:center 30%;" /><span>Dolphin</span></span></td>
+            <td class="tier-name"><span class="tier-id"><img class="tier-img" src="/Dolphin.jpg" alt="Dolphin leaping at sunset" loading="lazy"><span>Dolphin</span></span></td>
             <td>Authority · Tier 2</td>
             <td class="price">$1,997 / month</td>
             <td>Done-for-you citation campaigns, entity and schema implementation</td>
           </tr>
           <tr class="best">
-            <td class="tier-name"><span class="tier-id"><img class="tier-img" src="/Shark.jpg" alt="Great white shark in clear blue water - dominant AI market authority" width="900" height="1200" loading="lazy" decoding="async" style="object-position:center 32%;" /><span>Shark</span></span></td>
+            <td class="tier-name"><span class="tier-id"><img class="tier-img" src="/Shark.jpg" alt="Great white shark in clear blue water" loading="lazy"><span>Shark</span></span></td>
             <td>Market Leader · Tier 3</td>
             <td class="price">$3,497 / month</td>
             <td>Competing in valuable or crowded markets with priority execution</td>
           </tr>
           <tr>
-            <td class="tier-name"><span class="tier-id"><img class="tier-img" src="/Whale.jpg" alt="Humpback whale breaching - total AI presence and category leadership" width="900" height="1200" loading="lazy" decoding="async" style="object-position:center 35%;" /><span>Whale</span></span></td>
+            <td class="tier-name"><span class="tier-id"><img class="tier-img" src="/Whale.jpg" alt="Humpback whale breaching" loading="lazy"><span>Whale</span></span></td>
             <td>Category Leader · Tier 4</td>
             <td class="price">From $4,997 / month</td>
             <td>Multi-location strategy, executive authority, white-glove service</td>
@@ -1179,7 +1334,7 @@
         </tbody>
       </table>
     </div>
-    <p class="pricing-note reveal">Full feature breakdowns and tier comparisons are walked through on your discovery call. <a href="https://calendly.com/d/csyg-g3t-f6g" target="_blank" rel="noopener">Book 15 minutes →</a></p>
+    <p class="pricing-note reveal">Ready to claim your market? <a href="https://calendly.com/d/csyg-g3t-f6g" target="_blank" rel="noopener">Book a 15-minute discovery call →</a></p>
   </div>
 </section>
 <!-- ====== SPEED ====== -->
@@ -1285,7 +1440,7 @@
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="/BOI-Logo.png" alt="Blu Ocean Innovations" width="1920" height="759" />
+        <img src="/BOI-Logo.png" alt="Blu Ocean Innovations" />
         <p>We control what the internet and AI say about your business. Permanent authority infrastructure for the AI era.</p>
         <div class="social-links" aria-label="Social media">
           <a href="https://facebook.com/BluOceanRising" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
@@ -1321,6 +1476,7 @@
         <h4>Company</h4>
         <ul>
           <li><a href="#tide-summary">Tide Strategy</a></li>
+          <li><a href="#engines">8 Engines</a></li>
           <li><a href="#fit">Who We Serve</a></li>
           <li><a href="https://bluocean.blog/" target="_blank" rel="noopener">Blog</a></li>
           <li><a href="https://calendly.com/d/csyg-g3t-f6g" target="_blank" rel="noopener">Book a Call</a></li>
